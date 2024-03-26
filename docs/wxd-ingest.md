@@ -48,7 +48,7 @@ You should see a screen like the following.
 
 ![Browser](wxd-images/watsonx-dataexplorer.png)
  
-Use the "Create" pulldown and select Create schema in the `hive_data` catalog. 
+Use the "Create" drop-down and select Create schema in the `hive_data` catalog. 
 
 ![Browser](wxd-images/watsonx-create-schema.png)
  

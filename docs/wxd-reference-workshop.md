@@ -14,4 +14,8 @@ When the connection is successful, the details of your environment will be shown
 
 The top of the page contains all the published services that you will use during the lab. For instance, if the lab requires that you access the Presto console, you would click on the link in this browser which says:
 
-* Presto console - `https://useast.services.cloud.techzone.ibm.com:xxxxx`
+* Presto console - <code>https://useast.services.cloud.techzone.ibm.com:xxxxx</code>
+
+!!! Note "Watsonx.data URLs" 
+
+Each user will have a unique set of URLs for their watsonx.data environment. Your URL service name and port number will be different than the examples shown in this lab. Make sure to use your URLs in any examples that require a server URL address and port number. 

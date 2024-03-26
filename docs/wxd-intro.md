@@ -15,27 +15,4 @@ The next-gen watsonx.data lakehouse is designed to overcome the costs and comple
    * Deploy anywhere with full support for hybrid-cloud and multi cloud environments.
    * Shared metadata across multiple engines eliminates the need to re-catalog, accelerating time to value while ensuring governance and eliminating costly implementation efforts.
 
-This lab uses the watsonx.data developer package. The Developer package is meant to be used on single nodes. While it uses the same code base, there are some restrictions, especially on scale. 
-
-We organized this lab into a number of sections that cover many of the highlights and key features of watsonx.data.
-
-   * Requesting an IBM userid
-   * Accessing the Environment
-   * Introduction to watsonx.data
-   * Watsonx.data UI Navigation
-   * Infrastructure Manager
-   * Data Manager
-   * Query Workspace
-   * Time Travel
-   * Federation
-   * SQL Examples
-
-## Watsonx.data Developer Image 
-
-The watsonx.data system is running on a virtual machine with the following resources:
-
-   * 4 vCPUs
-   * 16Gb of memory
-   * 400Gb of disk
-
-This is sufficient for running this exercises found in this lab but should not be used for performance testing or dealing with large data sets.
+This lab uses the watsonx.data developer package. The Developer package is meant to be used on single nodes. While it uses the same code base, there are some restrictions, especially on scale.
