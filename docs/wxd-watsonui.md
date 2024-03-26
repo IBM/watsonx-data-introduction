@@ -40,7 +40,7 @@ The main screen provides a snapshot of the objects that are currently found in t
 
 You can examine these objects by using the menu system found on the left side of the screen. 
 
-!!! abstract "Click on the hamburger icon&nbsp;&nbsp;![Browser](wxd-images/watsonx-hamburger-icon.png)"
+!!! abstract "Click on the hamburger icon<br>![Browser](wxd-images/watsonx-hamburger-icon.png)"
 
 This will provide a list of items that you can explore in the UI.
 
@@ -65,7 +65,7 @@ Displays a summary of the watsonx.data system and provides a summary of recent a
 #### Infrastructure manager
 The Infrastructure manager displays the current engines, buckets and databases associated with the installation.
 
-!!! abstract "Click on the Infrastructure icon&nbsp;&nbsp;<img src='../wxd-images/watsonx-infrastructure-icon.png' align='top'>"
+!!! abstract "Click on the Query Workplace icon<br>![icon](wxd-images/watsonx-infrastructure-icon.png)"
 
 ![Browser](wxd-images/watsonx-infrastructure.png) 
 
@@ -73,7 +73,7 @@ The Infrastructure manager displays the current engines, buckets and databases a
 
 The Data Manager is used to explore the various data sources that are cataloged in the system. You can explore the schemas, tables, table layout and view a subset of the data with this option. The display make take a few minutes to show the schemas in the system as it is querying the catalog and populating the descriptions on the screen.
 
-!!! abstract "Click on the Data Manager icon&nbsp;&nbsp;![icon](wxd-images/watsonx-datamanager-icon.png)"
+!!! abstract "Click on the Data Manager icon<br>![icon](wxd-images/watsonx-datamanager-icon.png)"
 
 ![Browser](wxd-images/watsonx-dataexplorer.png) 
 
@@ -81,7 +81,7 @@ The Data Manager is used to explore the various data sources that are cataloged 
 
 The Query Workspace provides an SQL-based query tool for accessing the data.
 
-!!! abstract "Click on the Query Workplace icon&nbsp;&nbsp;![icon](wxd-images/watsonx-workspace-icon.png)"
+!!! abstract "Click on the Query Workplace icon<br>![icon](wxd-images/watsonx-workspace-icon.png)"
 
 ![Browser](wxd-images/watsonx-query.png) 
 
@@ -89,7 +89,7 @@ The Query Workspace provides an SQL-based query tool for accessing the data.
 
 The Query History displays a list of SQL queries that were previously run across all engines.
 
-!!! abstract "Click on the Query History icon&nbsp;&nbsp;![icon](wxd-images/watsonx-history-icon.png)"
+!!! abstract "Click on the Query History icon<br>![icon](wxd-images/watsonx-history-icon.png)"
 
 ![Browser](wxd-images/watsonx-history.png) 
 
@@ -97,7 +97,7 @@ The Query History displays a list of SQL queries that were previously run across
 
 The Access Control dialog provides controls for who can access the data.
 
-!!! abstract "Click on the Access Control icon &nbsp;&nbsp;![icon](wxd-images/watsonx-access-icon.png)"
+!!! abstract "Click on the Access Control icon<br>![icon](wxd-images/watsonx-access-icon.png)"
 
 ![Browser](wxd-images/watsonx-access.png) 
 

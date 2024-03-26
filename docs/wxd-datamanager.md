@@ -2,11 +2,13 @@
 
 The Data manager page can be used to explore and curate your data. It includes a data objects navigation pane on the left side of the page with a navigable hierarchy of engine <span style="color:blue">&rarr;</span> catalog <span style="color:blue">&rarr;</span> schema <span style="color:blue">&rarr;</span> table.
 
-!!! abstract "Click on the Data Manager icon on the left side of the screen&nbsp;&nbsp;![icon](wxd-images/watsonx-datamanager-icon.png)"
+!!! abstract "Click on the Data Manager icon on the left side of the screen<br>![icon](wxd-images/watsonx-datamanager-icon.png)"
 
-![Browser](wxd-images/watsonx-data-manager.png) 
+![Browser](wxd-images/watsonx-select-datamanager.png) 
 
 When the Data manager initially starts, you may not see any values on the right-hand side of the screen. This side of the screen is populated when you expand one of the selections on the left side.
+
+![Browser](wxd-images/watsonx-data-manager.png) 
 
 Watsonx.data (Presto) organizes tables, views, and other database objects in schemas. A schema is a logical collection or container of related database objects. For example, sales tables might be contained in one schema and marketing tables might be contained in another.
 

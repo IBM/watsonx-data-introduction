@@ -9,7 +9,7 @@ User account management and access management varies between the different deplo
 
 With the standalone software, users can be added within the console’s Access control page. In the Developer Edition, users can be added using a command line tool.
 
-!!! abstract "Click on the Access Control icon on the left side of the screen&nbsp;&nbsp;![icon](wxd-images/watsonx-access-icon.png)"
+!!! abstract "Click on the Access Control icon on the left side of the screen<br>![icon](wxd-images/watsonx-access-icon.png)"
 
 ![Browser](wxd-images/watsonx-select-accesscontrol.png) 
 
@@ -334,3 +334,5 @@ The log in dialog should be displayed.
     
 Your watsonx.data UI should now display `ibmlhadmin`.
 
+## Summary
+In this section you learned how to add a user to watsonx.data (via a command) and control what objects they are allowed to access. In production versions of watsonx.data, the adding and removal of users is directly handled through the User Interface.
