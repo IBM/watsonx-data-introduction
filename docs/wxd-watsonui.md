@@ -3,17 +3,17 @@ Your TechZone reservation will include the server name and port number to use wh
 
 <code style="color:blue; font-size: 90%;">Watsonx UI - https://useast.services.cloud.techzone.ibm.com:xxxxx</code>
 
-!!! Tip "Click on the watsonx.data UI supplied link or copy the URL and port number into your browser"
+!!! abstract "Click on the watsonx.data UI supplied link or copy the URL and port number into your browser"
 
 You will get a Certificate error in Firefox:
 
 ![Browser](wxd-images/browser-warning-1.png)
  
-!!! Tip "Select Advanced"
+!!! abstract "Select Advanced"
 
 ![Browser](wxd-images/browser-warning-2.png)
  
-!!! Tip "Choose 'Accept the Risk and Continue'" 
+!!! abstract "Choose 'Accept the Risk and Continue'" 
 
 If you are using Google Chrome, you can bypass the error message by typing in "thisisunsafe" or clicking on the "Proceed to `server name` (unsafe)" link. The `server name` value will be replaced with the name of the TechZone server you are connecting to. 
 
@@ -21,13 +21,12 @@ If you are using Google Chrome, you can bypass the error message by typing in "t
 
 The watsonx.data UI will display with a login prompt.
 
+!!! abstract "Enter the credentials for the ibmlhadmin user and press Log in"
+
+    * Username: ibmlhadmin
+    * Password: password
+
 ![Browser](wxd-images/watsonx-login.png)
-
-The userid is<code style="color:blue;font-size:medium;">ibmlhadmin</code> with password of <code style="color:blue;font-size:medium;">password</code>.
-
-|Service|Userid|Password
-|-------|------|--------|
-|watsonx.data UI|ibmlhadmin|password
 
 After entering the userid and password, the main watsonx.data UI will be displayed.
   
@@ -39,9 +38,9 @@ The main screen provides a snapshot of the objects that are currently found in t
 
 ![Browser](wxd-images/watsonx-components.png) 
 
-You can examine these objects by using the menu system found on the left side of the screen. Click on the hamburger icon.
+You can examine these objects by using the menu system found on the left side of the screen. 
 
-![Browser](wxd-images/watsonx-hamburger.png)
+!!! abstract "Click on the hamburger icon&nbsp;&nbsp;![Browser](wxd-images/watsonx-hamburger-icon.png)"
 
 This will provide a list of items that you can explore in the UI.
 
@@ -66,7 +65,7 @@ Displays a summary of the watsonx.data system and provides a summary of recent a
 #### Infrastructure manager
 The Infrastructure manager displays the current engines, buckets and databases associated with the installation.
 
-!!! abstract "Click on the Infrastructure icon"
+!!! abstract "Click on the Infrastructure icon&nbsp;&nbsp;<img src='../wxd-images/watsonx-infrastructure-icon.png' align='top'>"
 
 ![Browser](wxd-images/watsonx-infrastructure.png) 
 
@@ -74,7 +73,7 @@ The Infrastructure manager displays the current engines, buckets and databases a
 
 The Data Manager is used to explore the various data sources that are cataloged in the system. You can explore the schemas, tables, table layout and view a subset of the data with this option. The display make take a few minutes to show the schemas in the system as it is querying the catalog and populating the descriptions on the screen.
 
-!!! abstract "Click on the Data Manager icon"
+!!! abstract "Click on the Data Manager icon&nbsp;&nbsp;![icon](wxd-images/watsonx-datamanager-icon.png)"
 
 ![Browser](wxd-images/watsonx-dataexplorer.png) 
 
@@ -82,7 +81,7 @@ The Data Manager is used to explore the various data sources that are cataloged 
 
 The Query Workspace provides an SQL-based query tool for accessing the data.
 
-!!! abstract "Click on the Query Workplace icon"
+!!! abstract "Click on the Query Workplace icon&nbsp;&nbsp;![icon](wxd-images/watsonx-workspace-icon.png)"
 
 ![Browser](wxd-images/watsonx-query.png) 
 
@@ -90,7 +89,7 @@ The Query Workspace provides an SQL-based query tool for accessing the data.
 
 The Query History displays a list of SQL queries that were previously run across all engines.
 
-!!! abstract "Click on the Query History icon"
+!!! abstract "Click on the Query History icon&nbsp;&nbsp;![icon](wxd-images/watsonx-history-icon.png)"
 
 ![Browser](wxd-images/watsonx-history.png) 
 
@@ -98,11 +97,11 @@ The Query History displays a list of SQL queries that were previously run across
 
 The Access Control dialog provides controls for who can access the data.
 
-!!! abstract "Click on the Access Control icon"
+!!! abstract "Click on the Access Control icon &nbsp;&nbsp;![icon](wxd-images/watsonx-access-icon.png)"
 
 ![Browser](wxd-images/watsonx-access.png) 
 
-!!! Info "Access Control Restrictions"
+!!! warning "Access Control Restrictions"
 
 The Developer Edition does not provide the ability to add or remove users from the Access Control panel. The full version of watsonx.data does provide this capability. Add and removing users can be done through a command line interface instead.
 

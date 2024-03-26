@@ -9,7 +9,7 @@ User account management and access management varies between the different deplo
 
 With the standalone software, users can be added within the console’s Access control page. In the Developer Edition, users can be added using a command line tool.
 
-!!! abstract "Click on the Access Control icon on the left side of the screen"
+!!! abstract "Click on the Access Control icon on the left side of the screen&nbsp;&nbsp;![icon](wxd-images/watsonx-access-icon.png)"
 
 ![Browser](wxd-images/watsonx-select-accesscontrol.png) 
 

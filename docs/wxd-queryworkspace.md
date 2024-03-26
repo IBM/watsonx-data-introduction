@@ -3,7 +3,7 @@ Databases and query engines such as Presto have multiple ways that users can int
 
 Applications can use JDBC (Java Database Connectivity) to connect to the data store and run SQL statements. The watsonx.data user interface includes an SQL interface for building and running SQL statements. This is called the Query workspace. Users can write or copy in their own SQL statements, or they can use templates to assist in building new SQL statements.
 
-!!! abstract "Click on the Query Workspace icon on the left side of the screen"
+!!! abstract "Click on the Query Workspace icon on the left side of the screen&nbsp;&nbsp;![icon](wxd-images/watsonx-workspace-icon.png)"
 
 ![Browser](wxd-images/watsonx-select-queryworkspace.png) 
 

@@ -22,19 +22,24 @@ Lab instructions may contain two types of information:
 
 When an action is required, the text will include a box with the instructions.
 
-!!! Tip "Select the Infrastructure Icon in the watsonx.data UI"
+!!! abstract "Select the Infrastructure Icon in the watsonx.data UI"
 
 Any text that needs to be typed into the system will be outlined in grey box. 
 
-!!! Tip "SQL"
- 
+!!! abstract "Enter this text into the SQL window and Run the code"
+
     ```
-    cd /root/ibm-lh-dev/bin
-    ```
+    SELECT
+      *
+    FROM
+      "hive_data"."ontime"."ontime"
+    LIMIT
+      10;
+    ``` 
 
 A copy icon is usually found on the far right-hand side of the command box. Use this to copy the text and paste it into your dialog or command window. You can also select the text and copy it that way. Once you have copied the text, paste the value into the appropriate dialog using the paste command or menu.
 
-!!! Note "Copy and Paste"
+!!! warning "Copy and Paste"
 
 Some commands may span multiple lines, so make sure you copy everything in the box if you are not using the copy button
 

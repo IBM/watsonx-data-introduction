@@ -2,7 +2,7 @@
 
 The Data manager page can be used to explore and curate your data. It includes a data objects navigation pane on the left side of the page with a navigable hierarchy of engine <span style="color:blue">&rarr;</span> catalog <span style="color:blue">&rarr;</span> schema <span style="color:blue">&rarr;</span> table.
 
-!!! abstract "Click on the Data Manager icon on the left side of the screen"
+!!! abstract "Click on the Data Manager icon on the left side of the screen&nbsp;&nbsp;![icon](wxd-images/watsonx-datamanager-icon.png)"
 
 ![Browser](wxd-images/watsonx-data-manager.png) 
 

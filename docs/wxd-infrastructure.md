@@ -20,7 +20,7 @@ Now that you know what the various components are, we can look at the informatio
 
 The Infrastructure manager page opens with a graphical canvas view of the different infrastructure components currently defined in this watsonx.data environment. 
 
-!!! abstract "Click on the Infrastructure icon on the left side of the screen"
+!!! abstract "Click on the Infrastructure icon on the left side of the screen&nbsp;&nbsp;![icon](wxd-images/watsonx-infrastructure-icon.png)"
 
 ![Browser](wxd-images/watsonx-select-infrastructure.png) 
 

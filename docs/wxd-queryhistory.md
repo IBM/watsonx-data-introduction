@@ -2,7 +2,7 @@
 
 The Query History page displays the list of queries that were run while the Presto engine was running. It includes SQL that was run by a user along with SQL that was run by the watsonx.data UI to populate the values in the dialog.
 
-!!! abstract "Click on the Query History icon on the left side of the screen"
+!!! abstract "Click on the Query History icon on the left side of the screen&nbsp;&nbsp;![icon](wxd-images/watsonx-history-icon.png)"
 
 ![Browser](wxd-images/watsonx-select-queryhistory.png) 
 

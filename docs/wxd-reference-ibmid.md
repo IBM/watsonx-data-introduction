@@ -1,6 +1,6 @@
 # Requesting an IBM Userid
 
-!!! Danger "You must obtain an IBM Login Userid to use the lab"
+!!! Warning "You must obtain an IBM Login Userid to use the lab"
 
 An IBMid is needed to access IBM Technology Zone. If you do not have an IBMid, click on the following link.
 
