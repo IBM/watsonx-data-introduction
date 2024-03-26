@@ -534,17 +534,22 @@
 <li>Text commands</li>
 </ul>
 <p>When an action is required, the text will include a box with the instructions.</p>
-<div class="admonition tip">
+<div class="admonition abstract">
 <p class="admonition-title">Select the Infrastructure Icon in the watsonx.data UI</p>
 </div>
 <p>Any text that needs to be typed into the system will be outlined in grey box. </p>
-<div class="admonition tip">
-<p class="admonition-title">SQL</p>
-<div class="highlight"><pre><span></span><code>cd /root/ibm-lh-dev/bin
+<div class="admonition abstract">
+<p class="admonition-title">Enter this text into the SQL window and Run the code</p>
+<div class="highlight"><pre><span></span><code>SELECT
+  *
+FROM
+  &quot;hive_data&quot;.&quot;ontime&quot;.&quot;ontime&quot;
+LIMIT
+  10;
 </code></pre></div>
 </div>
 <p>A copy icon is usually found on the far right-hand side of the command box. Use this to copy the text and paste it into your dialog or command window. You can also select the text and copy it that way. Once you have copied the text, paste the value into the appropriate dialog using the paste command or menu.</p>
-<div class="admonition note">
+<div class="admonition warning">
 <p class="admonition-title">Copy and Paste</p>
 </div>
 <p>Some commands may span multiple lines, so make sure you copy everything in the box if you are not using the copy button</p>

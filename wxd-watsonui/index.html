@@ -585,46 +585,38 @@
 <h1 id="watsonxdata-console-ui-overview">Watsonx.data Console UI Overview</h1>
 <p>Your TechZone reservation will include the server name and port number to use when connecting to the watsonx.data UI. </p>
 <p><code style="color:blue; font-size: 90%;">Watsonx UI - https://useast.services.cloud.techzone.ibm.com:xxxxx</code></p>
-<div class="admonition tip">
+<div class="admonition abstract">
 <p class="admonition-title">Click on the watsonx.data UI supplied link or copy the URL and port number into your browser</p>
 </div>
 <p>You will get a Certificate error in Firefox:</p>
 <p><img alt="Browser" src="../wxd-images/browser-warning-1.png" /></p>
-<div class="admonition tip">
+<div class="admonition abstract">
 <p class="admonition-title">Select Advanced</p>
 </div>
 <p><img alt="Browser" src="../wxd-images/browser-warning-2.png" /></p>
-<div class="admonition tip">
+<div class="admonition abstract">
 <p class="admonition-title">Choose 'Accept the Risk and Continue'</p>
 </div>
 <p>If you are using Google Chrome, you can bypass the error message by typing in "thisisunsafe" or clicking on the "Proceed to <code>server name</code> (unsafe)" link. The <code>server name</code> value will be replaced with the name of the TechZone server you are connecting to. </p>
 <p><img alt="Browser" src="../wxd-images/chrome-browser.png" /></p>
 <p>The watsonx.data UI will display with a login prompt.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Enter the credentials for the ibmlhadmin user and press Log in</p>
+<ul>
+<li>Username: ibmlhadmin</li>
+<li>Password: password</li>
+</ul>
+</div>
 <p><img alt="Browser" src="../wxd-images/watsonx-login.png" /></p>
-<p>The userid is<code style="color:blue;font-size:medium;">ibmlhadmin</code> with password of <code style="color:blue;font-size:medium;">password</code>.</p>
-<table>
-<thead>
-<tr>
-<th>Service</th>
-<th>Userid</th>
-<th>Password</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>watsonx.data UI</td>
-<td>ibmlhadmin</td>
-<td>password</td>
-</tr>
-</tbody>
-</table>
 <p>After entering the userid and password, the main watsonx.data UI will be displayed.</p>
 <p><img alt="Browser" src="../wxd-images/watsonx-data-ui.png" />  </p>
 <h2 id="watsonxdata-ui-navigation">Watsonx.data UI Navigation</h2>
 <p>The main screen provides a snapshot of the objects that are currently found in the watsonx.data system. The infrastructure display shows that there is 1 engine, 3 catalogs and 3 buckets associated with the system.</p>
 <p><img alt="Browser" src="../wxd-images/watsonx-components.png" /> </p>
-<p>You can examine these objects by using the menu system found on the left side of the screen. Click on the hamburger icon.</p>
-<p><img alt="Browser" src="../wxd-images/watsonx-hamburger.png" /></p>
+<p>You can examine these objects by using the menu system found on the left side of the screen. </p>
+<div class="admonition abstract">
+<p class="admonition-title">Click on the hamburger icon&nbsp;&nbsp;<img alt="Browser" src="../wxd-images/watsonx-hamburger-icon.png" /></p>
+</div>
 <p>This will provide a list of items that you can explore in the UI.</p>
 <p><img alt="Browser" src="../wxd-images/watsonx-menu.png" /></p>
 <p>You can also access this list by clicking on one of the following icons.</p>
@@ -643,34 +635,34 @@
 <h4 id="infrastructure-manager">Infrastructure manager</h4>
 <p>The Infrastructure manager displays the current engines, buckets and databases associated with the installation.</p>
 <div class="admonition abstract">
-<p class="admonition-title">Click on the Infrastructure icon</p>
+<p class="admonition-title">Click on the Infrastructure icon&nbsp;&nbsp;<img src='../wxd-images/watsonx-infrastructure-icon.png' align='top'></p>
 </div>
 <p><img alt="Browser" src="../wxd-images/watsonx-infrastructure.png" /> </p>
 <h4 id="data-manager">Data Manager</h4>
 <p>The Data Manager is used to explore the various data sources that are cataloged in the system. You can explore the schemas, tables, table layout and view a subset of the data with this option. The display make take a few minutes to show the schemas in the system as it is querying the catalog and populating the descriptions on the screen.</p>
 <div class="admonition abstract">
-<p class="admonition-title">Click on the Data Manager icon</p>
+<p class="admonition-title">Click on the Data Manager icon&nbsp;&nbsp;<img alt="icon" src="../wxd-images/watsonx-datamanager-icon.png" /></p>
 </div>
 <p><img alt="Browser" src="../wxd-images/watsonx-dataexplorer.png" /> </p>
 <h4 id="query-workplace">Query Workplace</h4>
 <p>The Query Workspace provides an SQL-based query tool for accessing the data.</p>
 <div class="admonition abstract">
-<p class="admonition-title">Click on the Query Workplace icon</p>
+<p class="admonition-title">Click on the Query Workplace icon&nbsp;&nbsp;<img alt="icon" src="../wxd-images/watsonx-workspace-icon.png" /></p>
 </div>
 <p><img alt="Browser" src="../wxd-images/watsonx-query.png" /> </p>
 <h4 id="query-history">Query History</h4>
 <p>The Query History displays a list of SQL queries that were previously run across all engines.</p>
 <div class="admonition abstract">
-<p class="admonition-title">Click on the Query History icon</p>
+<p class="admonition-title">Click on the Query History icon&nbsp;&nbsp;<img alt="icon" src="../wxd-images/watsonx-history-icon.png" /></p>
 </div>
 <p><img alt="Browser" src="../wxd-images/watsonx-history.png" /> </p>
 <h4 id="access-control">Access Control</h4>
 <p>The Access Control dialog provides controls for who can access the data.</p>
 <div class="admonition abstract">
-<p class="admonition-title">Click on the Access Control icon</p>
+<p class="admonition-title">Click on the Access Control icon &nbsp;&nbsp;<img alt="icon" src="../wxd-images/watsonx-access-icon.png" /></p>
 </div>
 <p><img alt="Browser" src="../wxd-images/watsonx-access.png" /> </p>
-<div class="admonition info">
+<div class="admonition warning">
 <p class="admonition-title">Access Control Restrictions</p>
 </div>
 <p>The Developer Edition does not provide the ability to add or remove users from the Access Control panel. The full version of watsonx.data does provide this capability. Add and removing users can be done through a command line interface instead.</p>
