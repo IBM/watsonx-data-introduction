@@ -22,8 +22,7 @@ The watsonx.data hands-on lab introduces you to several core components and capa
 Specifically, you will get hands-on experience in the following areas:
 
 * The watsonx.data web-based user interface (UI), including infrastructure management, data management, running SQL statements, and managing user access
-* The Presto web interface and the Presto command line interface (CLI)
-*  Creating schemas and tables
+* An introduction to Presto SQL 
 * Running queries that combine data from multiple data sources (data federation)
 * Offloading tables from Db2 into watsonx.data
 * Rolling back a table to a previous point in time
