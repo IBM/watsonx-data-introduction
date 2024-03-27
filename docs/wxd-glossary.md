@@ -31,7 +31,3 @@ Application Programming Interface (API)**: Application Programming Interface (AP
 **SPARK**: Apache Spark is an open-source unified analytics engine for large-scale data processing. Spark provides an interface for programming clusters with implicit data parallelism and fault tolerance. Spark can be used with watsonx.data but is not included in the watsonx.data environment image provided.
 
 **TechZone (IBM Technology Zone)**: IBM Technology Zone is the platform where the developer edition of watsonx.data with the sample data sets has been provisioned. Generally, it allows Go To Market teams and Business Partners to easily build technical 'Show Me' live environments, POTs, prototypes, and MVPs, which can then be customized and shared with peers and customers to experience IBM Technology.
-
-**VNC (Virtual Network Computing)**: VNC is a cross-platform screen-sharing system that uses the Remote Frame Buffer (RFB) protocol. VNC was created to control another computer remotely. You may know it best for its role in tech support services. Use of VNC is optional. VNC can be used after the WireGuard VPN has been activated to access the watsonx.data server.
-
-**WireGuard**: WireGuard is a communication protocol and free and open-source software that implements encrypted virtual private networks, and was designed with the goals of ease of use, high speed performance, and low attack surface. You will need to install the Wireguard software and download the server VPN certificate in order to access the watsonx.data server.

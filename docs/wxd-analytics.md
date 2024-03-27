@@ -1,4 +1,6 @@
-# Analytic Workloads
+# Analytic Workload
+
+This section will explore some of the analytic workloads that you can run with watsonx.data.
 
 !!! abstract "Before starting, make sure you are in the Query Workspace by clicking this icon on the left side<br>![icon](wxd-images/watsonx-workspace-icon.png)"
 

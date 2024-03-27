@@ -382,6 +382,259 @@
   
 
     
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          Presto SQL
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Presto SQL" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          Presto SQL
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wxd-query/" class="md-nav__link">
+        Using the Query Workspace
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wxd-prestocli/" class="md-nav__link">
+        Presto SQL Overview
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wxd-analytics/" class="md-nav__link">
+        Analytic Workloads
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wxd-advanced/" class="md-nav__link">
+        Advanced Functions
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Time Travel
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Time Travel
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wxd-federation/" class="md-nav__link">
+        Federation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          Optional Features
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Optional Features" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          Optional Features
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wxd-jupyter/" class="md-nav__link">
+        Jupyter Notebook
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wxd-presto/" class="md-nav__link">
+        Presto UI
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wxd-reference-documentation/" class="md-nav__link">
+        Documentation
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wxd-glossary/" class="md-nav__link">
+        Glossary
+      </a>
+    </li>
+  
+
+    
   </ul>
 </nav>
                   </div>
@@ -402,6 +655,21 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -416,113 +684,96 @@
 
 <h1 id="time-travel">Time Travel</h1>
 <p>Time travel allows you change the view of the data to a previous time. This is not the same as an <code>AS OF</code> query commonly used in SQL. The data is rolled back to a prior time.</p>
-<p>Let us look at the snapshots available for the customer table in the workshop schema. We currently have just 1 snapshot. First make sure you are in the proper directory.
-<div class="highlight"><pre><span></span><code>cd /root/ibm-lh-dev/bin
-</code></pre></div>
-Connect to Presto using the workshop schema.
-<div class="highlight"><pre><span></span><code>./presto-cli --catalog iceberg_data --schema workshop
-</code></pre></div>
-Check current snapshots – STARTING STATE.
+<div class="admonition abstract">
+<p class="admonition-title">Before starting, make sure you are in the Query Workspace by clicking this icon on the left side<br><img alt="icon" src="../wxd-images/watsonx-workspace-icon.png" /></p>
+</div>
+<p>Let us look at the snapshots available for the customer table in the workshop schema.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Check current snapshots – STARTING STATE</p>
 <div class="highlight"><pre><span></span><code>SELECT 
    * 
 FROM 
    iceberg_data.workshop.&quot;customer$snapshots&quot; 
 ORDER BY 
    committed_at;
-</code></pre></div></p>
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-        committed_at         |     snapshot_id     | parent_id | operation |                                               manifest_list                                                |                                                                                                                summary                                                                                                                
------------------------------+---------------------+-----------+-----------+------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 2023-06-05 18:30:12.994 UTC | 6243511110201494487 | NULL      | append    | s3a://iceberg-bucket/customer/metadata/snap-6243511110201494487-1-b5ab84dc-671a-426a-a734-940baa49a11f.avro | {changed-partition-count=1, added-data-files=1, total-equality-deletes=0, added-records=1500, total-position-deletes=0, added-files-size=75240, total-delete-files=0, total-files-size=75240, total-records=1500, total-data-files=1} 
-(1 row)
-</pre>
-<p>Capture the first snapshot ID returned by the SQL statement. You will need this value when you run the rollback command.
+</code></pre></div>
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-sql-snapshots1.png" /></p>
+<p>You need to capture the first snapshot ID returned by the SQL statement. You will need this value when you run the rollback command.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Capture the first snapshot ID</p>
 <div class="highlight"><pre><span></span><code>SELECT 
    snapshot_id 
 FROM 
    iceberg_data.workshop.&quot;customer$snapshots&quot; 
 ORDER BY 
    committed_at;
-</code></pre></div></p>
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-     snapshot_id     
----------------------
- 6243511110201494487 
-(1 row)
-</pre>
-
-<p>Remember that number that was returned with the query above. Insert the following record to change the customer table in the workshop schema. 
-<div class="highlight"><pre><span></span><code>insert into customer 
-  values(1501,&#39;Deepak&#39;,&#39;IBM SVL&#39;,16,&#39;123-212-3455&#39;,
-         123,&#39;AUTOMOBILE&#39;,&#39;Testing snapshots&#39;);
 </code></pre></div>
- 
-Let us look at the snapshots available for the customer table in the workshop schema. You should have 2 snapshots. 
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-sql-snapshots2.png" />      </p>
+<p>Remember the number that was returned with the query above. </p>
+<div class="admonition warning">
+<p class="admonition-title">Your snapshot ID will be different than the examples in this lab</p>
+</div>
+<p>Insert the following record to change the customer table in the workshop schema. </p>
+<div class="admonition abstract">
+<p class="admonition-title">Insert a new customer record into the table</p>
+<p><div class="highlight"><pre><span></span><code>insert into iceberg_data.workshop.customer 
+   values(1501,&#39;Deepak&#39;,&#39;IBM SVL&#39;,16,&#39;123-212-3455&#39;,
+          123,&#39;AUTOMOBILE&#39;,&#39;Testing snapshots&#39;);
+</code></pre></div>
+</p>
+</div>
+<p>Let's look at the snapshots available for the customer table in the workshop schema. You should have 2 snapshots. </p>
+<div class="admonition abstract">
+<p class="admonition-title">View available snapshots</p>
 <div class="highlight"><pre><span></span><code>SELECT 
    * 
 FROM 
    iceberg_data.workshop.&quot;customer$snapshots&quot; 
 ORDER BY 
    committed_at;
-</code></pre></div></p>
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-        committed_at         |     snapshot_id     |      parent_id      | operation |                                               manifest_list                                                |                                                                                                                summary                                                                                                                
------------------------------+---------------------+---------------------+-----------+------------------------------------------------------------------------------------------------------------+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
- 2023-06-05 18:30:12.994 UTC | 6243511110201494487 | NULL                | append    | s3a://iceberg-bucket/customer/metadata/snap-6243511110201494487-1-b5ab84dc-671a-426a-a734-940baa49a11f.avro | {changed-partition-count=1, added-data-files=1, total-equality-deletes=0, added-records=1500, total-position-deletes=0, added-files-size=75240, total-delete-files=0, total-files-size=75240, total-records=1500, total-data-files=1} 
- 2023-06-05 18:52:49.193 UTC | 7110570704088319509 | 6243511110201494487 | append    | s3a://iceberg-bucket/customer/metadata/snap-7110570704088319509-1-ef26bcf1-c122-4ea4-86b7-ba26369be374.avro | {changed-partition-count=1, added-data-files=1, total-equality-deletes=0, added-records=1, total-position-deletes=0, added-files-size=1268, total-delete-files=0, total-files-size=76508, total-records=1501, total-data-files=2}     
-(2 rows)
-</pre>
-
-<p>Querying the customer table in the workshop schema, we can see the record inserted with name=’Deepak’.
-<div class="highlight"><pre><span></span><code>select * from customer where name=&#39;Deepak&#39;;
-</code></pre></div></p>
-<pre style="font-size: small; color: darkgreen; overflow: auto">
- custkey |  name  | address | nationkey |    phone     | acctbal | mktsegment |      comment      
----------+--------+---------+-----------+--------------+---------+------------+-------------------
-    1501 | Deepak | IBM SVL |        16 | 123-212-3455 |   123.0 | AUTOMOBILE | Testing snapshots 
-(1 row)
-</pre>
-
-<p>We realize that we don’t want the recent updates or just want to see what the data was at any point in time to respond to regulatory requirements. We will leverage the out-of-box system function <code>rollback_to_snapshot</code> to rollback to an older snapshot. The syntax for this function is:
+</code></pre></div>
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-sql-snapshots3.png" /></p>
+<p>Querying the customer table in the workshop schema, we can see the record inserted with name=’Deepak’.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Select customer Deepak</p>
+<div class="highlight"><pre><span></span><code>select * from iceberg_Data.workshop.customer where name=&#39;Deepak&#39;;
+</code></pre></div>
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-sql-snapshots4.png" /></p>
+<p>We realize that we don't want the recent updates or just want to see what the data was at any point in time to respond to regulatory requirements. We will leverage the out-of-box system function <code>rollback_to_snapshot</code> to rollback to an older snapshot. The syntax for this function is:
 <code style="color:blue; font-size: small">CALL iceberg_data.system.rollback_to_snapshot('workshop','customer',x);</code></p>
 <p>The "x" would get replaced with the <code style="color:blue;font-size:medium;">snapshot_id</code> number that was found in the earlier query. It will be different on your system than the examples above.</p>
-<p>Copy the next code segment into Presto.
-<div class="highlight"><pre><span></span><code>CALL iceberg_data.system.rollback_to_snapshot(&#39;workshop&#39;,&#39;customer&#39;,
+<div class="admonition abstract">
+<p class="admonition-title">View the available snapshots</p>
+<div class="highlight"><pre><span></span><code>SELECT 
+   snapshot_id 
+FROM 
+   iceberg_data.workshop.&quot;customer$snapshots&quot; 
+ORDER BY 
+   committed_at;
 </code></pre></div>
-You will see output similar to the following:</p>
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-CALL iceberg_data.system.rollback_to_snapshot('workshop','customer',
-              -> 
-</pre>
-<p>At this point you will need to copy and paste your <code>snapshot_id</code> into the Presto command line and press return or enter. You will see following:</p>
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-CALL iceberg_data.system.rollback_to_snapshot('workshop','customer',
-              -> 7230522396120575591
-7230522396120575591
-</pre>
-<p>Now you will need to terminate the command with a <code>);</code> to see the final result.
-<div class="highlight"><pre><span></span><code>);
-</code></pre></div></p>
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-CALL iceberg_data.system.rollback_to_snapshot('workshop','customer',
-              -> 7230522396120575591
-7230522396120575591
-              -> );
-);
-CALL
-</pre>
-
-<p>Querying the customer table in the workshop schema, we cannot see the record inserted with name=’Deepak’.
-<div class="highlight"><pre><span></span><code>select * from customer where name=&#39;Deepak&#39;;
-</code></pre></div></p>
-<pre style="font-size: small; color: darkgreen; overflow: auto">
- custkey |  name  | address | nationkey |    phone     | acctbal | mktsegment |      comment      
----------+--------+---------+-----------+--------------+---------+------------+-------------------
-(0 rows)
-</pre>
-<p>Quit Presto.
-<div class="highlight"><pre><span></span><code>quit;
-</code></pre></div></p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Copy the first snapshot ID back into the SQL window by itself. Then when you copy the next command, make sure to paste the SQL before the number, and then you can edit the SQL to add the snapshot ID.</p>
+</div>
+<div class="admonition abstract">
+<p class="admonition-title">Rollback to previous snapshot - Replace the ID parameter with the snapshot ID previously found. Remember the closing parenthesis!</p>
+<div class="highlight"><pre><span></span><code>CALL iceberg_data.system.rollback_to_snapshot(&#39;workshop&#39;,&#39;customer&#39;,ID)
+</code></pre></div>
+</div>
+<p>The only output that is produced is a true or false value.</p>
+<p>Querying the customer table in the workshop schema, we cannot see the record inserted with name=’Deepak’.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Select customer Deepak</p>
+<div class="highlight"><pre><span></span><code>select * from iceberg_data.workshop.customer where name=&#39;Deepak&#39;;
+</code></pre></div>
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-sql-snapshots5.png" /></p>
+<h2 id="summary">Summary</h2>
+<p>In this lab you learned how to rollback transactions to a previous checkpoint in the table.</p>
 
               
             </article>
@@ -533,6 +784,42 @@ CALL
       </main>
       
         <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../wxd-advanced/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Advanced Functions" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Advanced Functions
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../wxd-federation/" class="md-footer__link md-footer__link--next" aria-label="Next: Federation" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Federation
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">

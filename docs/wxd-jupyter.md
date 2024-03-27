@@ -1,13 +1,17 @@
 # Jupyter Notebook
 The watsonx.data server includes the Jupyter Notebook service which provides an interactive way of exploring the features of the Presto database. The link to the Jupyter Notebook table of contents is provided in your TechZone reservation.
 
-When you initially open the link, it will request a password to view the Table of Contents:
+!!! abstract "Find the URL in your reservation that reads Jupyter Notebook - Server: http://useast.services.cloud.techzone.ibm.com:xxxx/notebooks/Table_of_Contents.ipynb and click on it"
 
-![Browser](wxd-images/jupyter-password.png)
+The initial screen will request that you enter a password.
 
-The default password for the notebook is `watsonx.data`. Once you enter the password, the Table of Contents will be displayed.
+!!! abstract "Enter watsonx.data as the password"
 
-![Browser](wxd-images/jupyter-toc.png)
+![Browser](wxd-images/watsonx-jupyter-logon.png) 
+
+Once you have authenticated, the main table of contents will be displayed.
+
+![Browser](wxd-images/watsonx-jupyter-toc.png) 
 
 There are 11 notebooks provided in the system, and a brief description of the notebooks are found below.
 

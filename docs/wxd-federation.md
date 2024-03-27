@@ -1,186 +1,149 @@
 # Federation with watsonx.data
-Watsonx.data can federate data from other data sources, there are a few out of box connectors and one could create additional connectors using the SDK if need be (This does involve some programming and testing effort) and not a trivial exercise. We will use the existing PostgreSQL instance, add some data, and test the federation capabilities. 
 
-Open the developer sandbox and use existing scripts to create a PostgreSQL database and add some data.
+Watsonx.data can federate data from other data sources, there are a few out of box connectors and one could create additional connectors using the SDK if need be. We will be use a Db2 instance to retrieve data from that system.
 
-Switch to the bin directory as the root user.
+### Adding Db2 to watsonx.data
+To set up federation, we need to catalog the database server to the watsonx.data system. In order to do that we will need to use the Infrastructure manager.
 
-```
-cd /root/ibm-lh-dev/bin
-```
+!!! abstract "Click on the Infrastructure icon on the left side of the screen<br>![icon](wxd-images/watsonx-infrastructure-icon.png)"
 
-Connect to the sandbox.
-```
-./dev-sandbox.sh 
-```
-Create the database.
-```
-/scripts/create_db.sh pgdatadb
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-exists result: 
-CREATE DATABASE
-</pre>
+The Infrastructure manager view should be similar to this screen.
 
-Connect to the Database.quit;
-```
-/scripts/runsql.sh pgdatadb
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-psql (11.19, server 13.4 (Debian 13.4-4.pgdg110+1))
-WARNING: psql major version 11, server major version 13.
-         Some psql features might not work.
-Type "help" for help.
-</pre>
+![Browser](wxd-images/watsonx-infrastructure.png) 
 
-Create a Table.
-```
-create table t1( c1 int, c2 int);
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-CREATE TABLE
-</pre>
-Insert some sample data.
-```
-insert into t1 values(1,2);
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-INSERT 0 1
-</pre>
-
-Quit Postgres.
-```
-quit
-```
-
-Quit Sandbox.
-```
-exit
-```
-### PostgreSQL Properties
-To set up federation, we need to get the credentials for the PostgreSQL database. Use the following command to get the database password.
-```
-export POSTGRES_PASSWORD=$(docker exec ibm-lh-postgres printenv | grep POSTGRES_PASSWORD | sed 's/.*=//')
-echo "Postgres Userid   : admin"
-echo "Postgres Password : " $POSTGRES_PASSWORD
-echo $POSTGRES_PASSWORD > /tmp/postgres.pw
-```
-Open your browser and navigate to:
-
-
-* Watsonx.data UI - https://region.techzone-server.com:port
-* Credentials: username: <code style="color:blue;font-size:medium;">ibmlhadmin</code> password: <code style="color:blue;font-size:medium;">password</code>
-
-   
-Navigate to the Infrastructure manager by clicking on the icon below the Home symbol.
-
-![Browser](wxd-images/watsonx-icon-infra.png)
-  
-You should see a panel like the following.
-
-![Browser](wxd-images/watsonx-infrastructure-1.png)
- 
-On the top right-hand corner, select Add Component->Add database.
-
+!!! abstract "On the top right-hand corner, select Add Component<span style="color:blue">&rarr;</span>Add Database"
 ![Browser](wxd-images/watsonx-add-component.png)
- 
+
 The Add database dialog is displayed.
 
 ![Browser](wxd-images/watsonx-adddb.png)
       
-Enter the following values:
+!!! abstract "Enter the following values into the dialog"
 
-   * Database type – <code style="color:blue;font-size:medium;">PostgreSQL</code>
-   * Database name – <code style="color:blue;font-size:medium;">pgdatadb</code>
-   * Hostname –<code style="color:blue;font-size:medium;">ibm-lh-postgres</code>
-   * Port – <code style="color:blue;font-size:medium;">5432</code>
-   * Display name – <code style="color:blue;font-size:medium;">pgdatadb</code>
-   * Username – <code style="color:blue;font-size:medium;">admin</code>
-   * Password – The value that was extracted in the earlier step
-   * Catalog Name – <code style="color:blue;font-size:medium;">pgdatadb</code>
+    * Database type – <code style="color:blue;font-size:medium;">IBM Db2</code>
+    * Database name – <code style="color:blue;font-size:medium;">gosales</code>
+    * Hostname –<code style="color:blue;font-size:medium;">watsonxdata</code>
+    * Port – <code style="color:blue;font-size:medium;">50000</code>
+    * Display name – <code style="color:blue;font-size:medium;">gosales</code>
+    * Username – <code style="color:blue;font-size:medium;">db2inst1</code>
+    * Password – <code style="color:blue;font-size:medium;">db2inst1</code>
+    * Catalog Name – <code style="color:blue;font-size:medium;">gosales</code>
    
-Your screen should look like the one below. You can press the "Test" button to check to see if the connection settings are correct. Once you are satisfied with the settings, press "Add". 
+Your screen should look like the one below. 
 
-![Browser](wxd-images/watsonx-add-pgdatadb.png)
+![Browser](wxd-images/watsonx-addsettings.png)
 
-The infrastructure screen should now show the Postgres database.
+!!! abstract "Press the Test connection button to check connectivity"
 
-![Browser](wxd-images/watsonx-2-infrastructure.png)
+![Browser](wxd-images/watsonx-testok.png)
+
+!!! abstract "Once you are satisfied with the settings, press Register" 
+
+Your infrastructure screen should now look similar to the following.
+
+![Browser](wxd-images/watsonx-db2-registered.png)
  
-What we are currently missing the connection between the Presto engine and the Postgres data in pgdatadb. We must connect the pgdatadb database to the Presto engine. Use your mouse to hover over the pgdatadb icon until you see the Associate connection icon:
+What we are currently missing the connection between the Presto engine and the Db2 data in gosales. We must connect the Db2 database to the Presto engine. 
 
-![Browser](wxd-images/watsonx-pgdatadb-associate-icon.png)
+!!! abstract "Use your mouse to hover over the Db2 icon until you see the Associate connection icon"
+
+![Browser](wxd-images/watsonx-db2-associate.png)
  
-Click on the association icon. You should see the following confirmation dialog:
+!!! abstract "Click on the Manage associations icon"
 
-![Browser](wxd-images/watsonx-pgdata-associate-engine.png)
+You should see the following confirmation dialog.
 
-Select the <code style="color:blue;font-size:medium;">presto-01</code> engine and press **Save and restart engine**.
+![Browser](wxd-images/watsonx-manage-associations.png)
+
+!!! abstract "Select the presto-01 engine and press Save and restart engine"
  
-Press the Associate button and the screen will update to show the connection.
+The infrastructure display will refresh to show the Db2 connection.
 
-![Browser](wxd-images/watsonx-3-infrastructure.png)
+![Browser](wxd-images/watsonx-db2-associated.png)
  
 ### Presto Federation
 
-First check to make sure that the Presto engine has finished starting. While the watsonx.data UI has restarted the Presto process, it takes a few seconds to become available.
+!!! warning "Presto Engine Status"
 
-```
-check_presto
-```
+    When a new database or bucket is added to the watsonx.data system, the Presto engine will become unavailable temporarily while it catalogs the new objects. During this time any SQL requests or table browsing may result in an error code being displayed. The system usually restarts within a minute and you can attempt your SQL again.
 
-When the command comes back as Ready, you can start using the Presto CLI.
+We start by checking the status of our new connection to Db2. 
 
-Connect to watsonx.data and try Federation.
-```
-./presto-cli --catalog pgdatadb
-```
+!!! abstract "Click on the Data Manager icon on the left side of the screen<br>![icon](wxd-images/watsonx-datamanager-icon.png)"
 
-Show the current schemas. 
-```
-show schemas;
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-       Schema       
---------------------
-pg_catalog         
- public             
-(2 rows)
-</pre>
-Use the public schema.
-```
-use public;
-```
-Select the table we created in Postgres.
-```
-select * from public.t1;
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
- c1 | c2 
-----+----
-  1 |  2 
-(1 row)
-</pre>
- 
-Join with data from other schemas (Sample TPCH+PostgreSQL).
-```
-select t1.*,customer.name from tpch.tiny.customer, pgdatadb.public.t1 limit 10;
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-c1 | c2 |        name        
-----+----+--------------------
-  1 |  2 | Customer#000000001 
-  1 |  2 | Customer#000000002 
-  1 |  2 | Customer#000000003 
-  1 |  2 | Customer#000000004 
-  1 |  2 | Customer#000000005 
-  1 |  2 | Customer#000000006 
-  1 |  2 | Customer#000000007 
-  1 |  2 | Customer#000000008 
-(10 rows)
-</pre>
+![Browser](wxd-images/watsonx-select-datamanager.png) 
 
-Quit Presto.
-```
-quit;
-```
+Your screen should look similar to this one.
+
+![Browser](wxd-images/watsonx-dm-db2.png) 
+
+!!! abstract "Select the Db2 catalog and expand the gosales and gosalesdw objects"
+
+![Browser](wxd-images/watsonx-dm-db2-expanded.png) 
+
+!!! abstract "Select the DIST_INVENTORY_FACT table"
+
+![Browser](wxd-images/watsonx-dm-db2-dist-fact.png) 
+
+Watsonx.data is able to view the Db2 catalog and query the data that is found in it. We can now add Db2 to the queries that we run in the Presto engine.
+
+!!! abstract "Before starting, make sure you are in the Query Workspace by clicking this icon on the left side<br>![icon](wxd-images/watsonx-workspace-icon.png)"
+
+!!! abstract "Select the names of employees in the GOSALES database with employee ids between 4000 and 5000"
+      ```
+      select 
+        go."EMPLOYEE_KEY", go."FIRST_NAME", go."LAST_NAME" 
+      from 
+        gosales."GOSALESDW"."EMP_EMPLOYEE_DIM" go
+      where 
+        go."EMPLOYEE_KEY" between 4000 and 5000
+      order by 
+        go."EMPLOYEE_KEY"
+      ```
+
+![Browser](wxd-images/watsonx-sql-db2-federated.png) 
+
+Now we can create a query that combines data from the TPCH catalog and the Db2 catalog.
+
+!!! abstract "Select TPCH customers who are employees in GOSALES"
+      ```
+      select 
+        t1.custkey, go."FIRST_NAME", go."LAST_NAME" 
+      from 
+        tpch.sf1.customer t1, gosales."GOSALESDW"."EMP_EMPLOYEE_DIM" go
+      where 
+         t1.custkey between 4000 and 5000 AND
+         go."EMPLOYEE_KEY" = t1.custkey
+      order by 
+         t1.custkey
+      ```
+
+![Browser](wxd-images/watsonx-sql-db2-federated2.png) 
+
+We can use the federation capability to offload tables from Db2 into a watsonx.data table.
+
+!!! abstract "Create a table in iceberg_data using the Db2 employee table"
+    ```
+    create table iceberg_data.workshop.db2employee AS 
+      select 
+        go."EMPLOYEE_KEY", go."FIRST_NAME", go."LAST_NAME" 
+      from 
+        gosales."GOSALESDW"."EMP_EMPLOYEE_DIM" go
+      where 
+        go."EMPLOYEE_KEY" between 4000 and 5000
+      order by 
+        go."EMPLOYEE_KEY"
+    ```
+
+![Browser](wxd-images/watsonx-sql-db2-create.png) 
+
+Now we can query the data natively with the Presto engine.
+
+!!! abstract "Query the contents of the new db2employee table"
+    ```
+    select * from iceberg_data.workshop.db2employee
+    ```
+
+## Summary
+
+In this lab you learned about the federation capabilities of the Presto engine, how to register a database into the system, and how you can run queries and create tables using Federation.
