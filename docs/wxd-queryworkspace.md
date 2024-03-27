@@ -93,7 +93,7 @@ This dialog provides more information on the execution of the SQL statement. If 
 ![Browser](wxd-images/watsonx-sql-explain-results.png)
 
 The graph displays the steps the Presto engine took to compute the answer. 
-You can click on any one of the boxes in the diagram to display the details of the step. The system will not show many details due to the small size of the table.
+You can click on any one of the boxes in the diagram to display the details of the step. The system will not show many details because the data is in a hive catalog and not optimized for retrieval.
 
 !!! abstract "Close the Explain dialog by pressing the [x]"
 

@@ -1,234 +1,139 @@
-# Watsonx.data Introduction
+# PrestoDB SQL
  
- Watsonx.data is based on open source PrestoDB, a distributed query engine that enables querying data stored in open file formats using open table formats for optimization or performance. Some of the characteristics which you will learn and see in action include:
+Watsonx.data is based on open source PrestoDB, a distributed query engine that enables querying data stored in open file formats using open table formats for optimization or performance. 
 
-   * Compute processing is performed in memory and in parallel.
-   * Data is pipelined between query stages and over the network reducing latency overhead that one would have if disk I/O were involved.
-
-All the below tasks will be done using the Developer edition of watsonx.data.
-
-## Using watsonx.data
 Connectivity to watsonx.data can be done using the following methods:
 
    * Command line interface (CLI)
    * JDBC drivers
    * watsonx.data UI 
 
-### Connecting to watsonx.data and executing queries using CLI
+This lab will be using the watsonx.data UI to issue the SQL commands. Please make sure to review the [Using the Query Workspace](wxd-query.md) lab before running the examples in this lab.
 
-Open the watsonx.data CLI using the development directory. Make sure you are the root user. 
-```
-whoami
-```
+The SQL statements that you will be executing will be displayed in this format:
 
-If not, switch to the root user.
-```
-sudo su -
-```
-Change to the development directory.
-```
-cd /root/ibm-lh-dev/bin
-```
-Start the Presto CLI.
-```
-./presto-cli
-```
+!!! abstract "Sample SQL"
+
+    ```
+    SELECT
+      *
+    FROM
+      "hive_data"."ontime"."ontime"
+    LIMIT
+      10;
+    ``` 
+
+A copy icon is found on the far right-hand side of the command box. Use this to copy the text and paste it the SQL window. You can also select the text and copy it that way. 
+
+The expected results are displayed below the SQL command (your results may vary depending on the query).
+
+!!! abstract "Before starting, make sure you are in the Query Workspace by clicking this icon on the left side<br>![icon](wxd-images/watsonx-workspace-icon.png)"
+
+### Catalog 
 
 We are going to inspect the available catalogs in the watsonx.data system. A watsonx.data catalog contains schemas and references a data source via a connector. A connector is like a driver for a database. Watsonx.data connectors are an implementation of Presto’s SPI which allows Presto to interact with a resource. There are several built-in connectors for JMX, Hive, TPCH etc., some of which you will use as part of the labs.
 
-Display the catalogs.
-```
-show catalogs;
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-    Catalog    
----------------
- hive_data     
- iceberg_data 
- jmx           
- system        
- tpcds         
- tpch          
-(6 rows)
-</pre>
+!!! abstract "Display the catalogs"
+    ```
+    show catalogs;
+    ```
+
+![Browser](wxd-images/watsonx-sql-show-catalogs.png)
 
 Let's look up what schemas are available with any given catalog. We will use the TPCH catalog which is an internal PrestoDB auto-generated catalog and look at the available schemas.
-```
-show schemas in tpch;
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-       Schema       
---------------------
- information_schema 
- sf1                
- sf100              
- sf1000             
- sf10000            
- sf100000           
- sf300              
- sf3000             
- sf30000            
- tiny               
-(10 rows)
-</pre>
-Quit the presto-cli interface by executing the "quit;" command.
-```
-quit;
-```
 
-You can connect to a specific catalog and schema and look at the tables etc.
-```
-./presto-cli --catalog tpch --schema tiny
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-presto:tiny>
+!!! abstract "Show schemas in tpch"
+    ```
+    show schemas in tpch;
+    ```
+
+![Browser](wxd-images/watsonx-sql-show-tpch.png)
+
+You can connect to a specific catalog using the `USE` command. Rather than having to type out the catalog name, you can use this command to make the catalog the default for any SQL that doesn't include it.
+
+The command format is:
+<pre style="font-size: medium; color: darkgreen; overflow: auto">
+USE catalog
+USE catalog.schema
 </pre>
-You will notice that the Presto prompt includes the name of the schema we are currently connected to.
+
+!!! abstract "Set the catalog to tpch.tiny"
+    ```
+    USE tpch.tiny;
+    ```
 
 Look at the available tables in the TPCH catalog under the `tiny` schema.
-```
-show tables;
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-  Table   
-----------
- customer 
- lineitem 
- nation   
- orders   
- part     
- partsupp 
- region   
- supplier 
-(8 rows)
-</pre>
 
-Inspect schema of the customer table.
-```
-describe customer;
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-   Column   |     Type     | Extra | Comment 
-------------+--------------+-------+---------
- custkey    | bigint       |       |         
- name       | varchar(25)  |       |         
- address    | varchar(40)  |       |         
- nationkey  | bigint       |       |         
- phone      | varchar(15)  |       |         
- acctbal    | double       |       |         
- mktsegment | varchar(10)  |       |         
- comment    | varchar(117) |       |         
-(8 rows)
-</pre>
+!!! abstract "View tables in the current schema"
+    ```
+    show tables; 
+    ```
+
+!!! warning "Your SQL will fail!"
+
+The SQL doesn't quite work as expected! The reason is that each SQL statement executed in the SQL window has an independent context. What this means is that the catalog name is reset when you run another SQL statement after the `USE` statement is executed. If we bundle the two commands together, the SQL will work.
+
+!!! abstract "Set the catalog to tpch.tiny and show the tables"
+    ```
+    USE tpch.tiny;
+    show tables;
+    ```
+
+![Browser](wxd-images/watsonx-sql-show-tiny-tables.png)    
+    
+The describe command is used to display the format of a table.
+
+!!! abstract "Inspect schema of the customer table"
+    ```
+    use tpch.tiny;
+    describe customer;
+    ```
+
+![Browser](wxd-images/watsonx-sql-describe-customer.png) 
 
 You could also use the syntax below to achieve the same result.
-```
-show columns from customer;
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-Column     |     Type     | Extra | Comment
------------+--------------+-------+---------
-custkey    | bigint       |       |
-name       | varchar(25)  |       |
-address    | varchar(40)  |       |
-nationkey  | bigint       |       |
-phone      | varchar(15)  |       |
-acctbal    | double       |       |
-mktsegment | varchar(10)  |       |
-comment    | varchar(117) |       |
-(8 rows)
-</pre>
+
+!!! abstract "Show the customer table columns using an alternate format"
+    ```
+    show columns from tpch.tiny.customer;
+    ```
+
+![Browser](wxd-images/watsonx-sql-describe-customer2.png)    
+
+The Presto engine includes a number of built-in functions. The following SQL will return a list of available Date functions.
  
-Inspect available functions.
-```
-show functions like 'date%';
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-  Function   |       Return Type        |                         Argument Types                         | Function Type | Deterministic |                         Description                         | Variable Arity | Built In | Temporary | Language 
--------------+--------------------------+----------------------------------------------------------------+---------------+---------------+-------------------------------------------------------------+----------------+----------+-----------+----------
- date        | date                     | timestamp                                                      | scalar        | true          |                                                             | false          | true     | false     |          
- date        | date                     | timestamp with time zone                                       | scalar        | true          |                                                             | false          | true     | false     |          
- date        | date                     | varchar(x)                                                     | scalar        | true          |                                                             | false          | true     | false     |          
- date_add    | date                     | varchar(x), bigint, date                                       | scalar        | true          | add the specified amount of date to the given date          | false          | true     | false     |          
- date_add    | time                     | varchar(x), bigint, time                                       | scalar        | true          | add the specified amount of time to the given time          | false          | true     | false     |          
- date_add    | time with time zone      | varchar(x), bigint, time with time zone                        | scalar        | true          | add the specified amount of time to the given time          | false          | true     | false     |          
- date_add    | timestamp                | varchar(x), bigint, timestamp                                  | scalar        | true          | add the specified amount of time to the given timestamp     | false          | true     | false     |          
- date_add    | timestamp with time zone | varchar(x), bigint, timestamp with time zone                   | scalar        | true          | add the specified amount of time to the given timestamp     | false          | true     | false     |          
- date_diff   | bigint                   | varchar(x), date, date                                         | scalar        | true          | difference of the given dates in the given unit             | false          | true     | false     |          
- date_diff   | bigint                   | varchar(x), time with time zone, time with time zone           | scalar        | true          | difference of the given times in the given unit             | false          | true     | false     |          
- date_diff   | bigint                   | varchar(x), time, time                                         | scalar        | true          | difference of the given times in the given unit             | false          | true     | false     |          
- date_diff   | bigint                   | varchar(x), timestamp with time zone, timestamp with time zone | scalar        | true          | difference of the given times in the given unit             | false          | true     | false     |          
- date_diff   | bigint                   | varchar(x), timestamp, timestamp                               | scalar        | true          | difference of the given times in the given unit             | false          | true     | false     |          
- date_format | varchar                  | timestamp with time zone, varchar(x)                           | scalar        | true          |                                                             | false          | true     | false     |          
- date_format | varchar                  | timestamp, varchar(x)                                          | scalar        | true          |                                                             | false          | true     | false     |          
- date_parse  | timestamp                | varchar(x), varchar(y)                                         | scalar        | true          |                                                             | false          | true     | false     |          
- date_trunc  | date                     | varchar(x), date                                               | scalar        | true          | truncate to the specified precision in the session timezone | false          | true     | false     |          
- date_trunc  | time                     | varchar(x), time                                               | scalar        | true          | truncate to the specified precision in the session timezone | false          | true     | false     |          
- date_trunc  | time with time zone      | varchar(x), time with time zone                                | scalar        | true          | truncate to the specified precision                         | false          | true     | false     |          
- date_trunc  | timestamp                | varchar(x), timestamp                                          | scalar        | true          | truncate to the specified precision in the session timezone | false          | true     | false     |          
- date_trunc  | timestamp with time zone | varchar(x), timestamp with time zone                           | scalar        | true          | truncate to the specified precision                         | false          | true     | false     |          
-(21 rows)
+!!! abstract "Inspect available Date functions"
+    ```
+    show functions like 'date%';
+    ```
 
-</pre>
-Switch to a different schema.
-```
-use sf1;
-```
-Display the Tables in the schema.
-```
-show tables;
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
-  Table   
-----------
- customer 
- lineitem 
- nation   
- orders   
- part     
- partsupp 
- region   
- supplier 
-(8 rows)
-</pre>
- 
-Query data from customer table.
-```
-select * from customer limit 5;
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
- custkey |        name        |                 address                  | nationkey |      phone      | acctbal | mktsegment |                                                comment                                                
----------+--------------------+------------------------------------------+-----------+-----------------+---------+------------+-------------------------------------------------------------------------------------------------------
-   37501 | Customer#000037501 | Ftb6T5ImHuJ                              |         2 | 12-397-688-6719 | -324.85 | HOUSEHOLD  | pending ideas use carefully. express, ironic platelets use among the furiously regular instructions.  
-   37502 | Customer#000037502 | ppCVXCFV,4JJ97IibbcMB5,aPByjYL07vmOLO 3m |        18 | 28-515-931-4624 |  5179.2 | BUILDING   | express deposits. pending, regular deposits wake furiously bold deposits. regular                     
-   37503 | Customer#000037503 | Cg60cN3LGIUpLpXn0vRffQl8                 |        13 | 23-977-571-7365 | 1862.32 | BUILDING   | ular deposits. furiously ironic deposits integrate carefully among the iron                           
-   37504 | Customer#000037504 | E1 IiMlCfW7I4 1b9wfDZR                   |        21 | 31-460-590-3623 | 2955.33 | HOUSEHOLD  | s believe slyly final foxes. furiously e                                                              
-   37505 | Customer#000037505 | Ad,XVdA6XAa0h aukZHUo5Mxh,ZRwVR3k7b7     |         3 | 13-521-760-7263 | 3243.15 | FURNITURE  | ites according to the quickly bold instru                                                             
-(5 rows)
+![Browser](wxd-images/watsonx-sql-date-functions.png)   
 
-</pre>
+Now we will switch to a different schema and display the tables in it. In this example we use the show command with the `IN` clause to tell the system which catalog and schema to use.
 
-Gather statistics on a given table.
-```
-show stats for customer;
-```
-<pre style="font-size: small; color: darkgreen; overflow: auto">
- column_name |  data_size  | distinct_values_count | nulls_fraction | row_count | low_value | high_value 
--------------+-------------+-----------------------+----------------+-----------+-----------+------------
- custkey     | NULL        |              150039.0 |            0.0 | NULL      | 1         | 150000     
- name        |   2700000.0 |              149980.0 |            0.0 | NULL      | NULL      | NULL       
- address     |   3758056.0 |              150043.0 |            0.0 | NULL      | NULL      | NULL       
- nationkey   | NULL        |                  25.0 |            0.0 | NULL      | 0         | 24         
- phone       |   2250000.0 |              150018.0 |            0.0 | NULL      | NULL      | NULL       
- acctbal     | NULL        |              140166.0 |            0.0 | NULL      | -999.99   | 9999.99    
- mktsegment  |   1349610.0 |                   5.0 |            0.0 | NULL      | NULL      | NULL       
- comment     | 1.0876099E7 |              149987.0 |            0.0 | NULL      | NULL      | NULL       
- NULL        | NULL        | NULL                  | NULL           |  150000.0 | NULL      | NULL       
-(9 rows)
+!!! abstract "View the contents of the sf1 schema"
+    ```
+    show tables in tpch.sf1;
+    ```
 
-</pre>
+![Browser](wxd-images/watsonx-sql-sf1-tables.png)       
 
-Quit Presto.
-```
-quit;
-```
+!!! abstract "Query data from customer table"
+    ```
+    select * from tpch.sf1.customer limit 5;
+    ```
+
+![Browser](wxd-images/watsonx-sql-sf1-customer.png)   
+
+Presto gathers statistics for tables in order to generate more accurate access plans. This SQL will gather statistics on a given table.
+
+!!! abstract "Gather statistics on the customer table"
+    ```
+    show stats for tpch.sf1.customer;
+    ```
+
+![Browser](wxd-images/watsonx-sql-statistics.png) 
+
+## Summary
+
+This lab has provided an introduction to some of the SQL that is available in Presto and watsonx.data. The next set of labs will demonstrate some more sophisticated SQL that can be run in the Presto engine.

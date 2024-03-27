@@ -14,6 +14,14 @@ nav:
     - Query Workspace: "wxd-queryworkspace.md"
     - Query History: "wxd-queryhistory.md"
     - Access Control: "wxd-accesscontrol.md"
+  - Presto SQL:
+    - Using the Query Workspace: "wxd-query.md"
+    - Presto SQL Overview: "wxd-prestocli.md"
+    - Analytic Workloads: "wxd-analytics.md"
+    - Advanced Functions: "wxd-advanced.md"
+    - Time Travel: "wxd-timetravel.md"
+    - Federation: "wxd-federation.md"
+    - System Connector: "wxd-systemconnector.md"    
   #- Userids and Passwords: "wxd-reference-passwords.md"
 
   #- Jupyter Notebook: "wxd-jupyter.md"
