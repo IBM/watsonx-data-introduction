@@ -63,7 +63,7 @@ Querying the customer table in the workshop schema, we can see the record insert
 
 !!! abstract "Select customer Deepak"
       ```
-      select * from iceberg_Data.workshop.customer where name='Deepak';
+      select * from iceberg_data.workshop.customer where name='Deepak';
       ```
 
  ![Browser](wxd-images/watsonx-sql-snapshots4.png)
