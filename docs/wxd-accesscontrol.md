@@ -64,11 +64,10 @@ The browser will display the User Administration notebook.
 
 ![Browser](wxd-images/watsonx-jupyter-adminhome.png) 
 
-A Jupyter notebook contains multiple "cells" which can contain one of three different types of objects:
+A Jupyter notebook contains multiple "cells" which can contain a couple of different objects:
 
 - **Code** - A cell that contains code that will run (usually Python)
 - **Markdown** - A cell that contains text and formatting using a language called Markdown
-- **Raw NBConvert** - A specialized cell that is rendered (displayed) using an extension, like mathematical formulas
 
 In this lab, we need to run code that is found in the notebook. You can tell which text is a code cell because of the **`[ ]:`** beside the cell and probably because it has some code in the cell! 
 
@@ -187,6 +186,8 @@ You can always activate a policy after you have created it.
 Here we need to select which catalog to use and then the schemas that the user will be able to access.
 
 !!! abstract "Select hive_data catalog, and then the ontime schema"
+
+!!! error "If you do not see any values being populated on the screen, refresh the browser"
 
 After selecting the schema, a set of tables associated with the schema will be listed.
 
