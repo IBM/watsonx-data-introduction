@@ -222,7 +222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wxd-reference-ibmid/" class="md-nav__link">
+      <a href="../wxd-ibmid/" class="md-nav__link">
         Requesting an IBMid
       </a>
     </li>
@@ -236,7 +236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wxd-reference-workshop/" class="md-nav__link">
+      <a href="../wxd-workshop/" class="md-nav__link">
         Accessing a workshop
       </a>
     </li>
@@ -355,8 +355,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exploring-the-contents-of-a-catalog-or-bucket" class="md-nav__link">
-    Exploring the Contents of a Catalog or Bucket
+  <a href="#exploring-the-contents-of-a-catalog" class="md-nav__link">
+    Exploring the Contents of a Catalog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploring-the-contents-of-a-bucker" class="md-nav__link">
+    Exploring the Contents of a Bucker
   </a>
   
 </li>
@@ -634,7 +641,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wxd-reference-documentation/" class="md-nav__link">
+      <a href="../wxd-documentation/" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -651,6 +658,21 @@
     <li class="md-nav__item">
       <a href="../wxd-glossary/" class="md-nav__link">
         Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wxd-disclaimer/" class="md-nav__link">
+        Disclaimer
       </a>
     </li>
   
@@ -690,8 +712,15 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exploring-the-contents-of-a-catalog-or-bucket" class="md-nav__link">
-    Exploring the Contents of a Catalog or Bucket
+  <a href="#exploring-the-contents-of-a-catalog" class="md-nav__link">
+    Exploring the Contents of a Catalog
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#exploring-the-contents-of-a-bucker" class="md-nav__link">
+    Exploring the Contents of a Bucker
   </a>
   
 </li>
@@ -793,7 +822,7 @@
 <div class="admonition abstract">
 <p class="admonition-title">Switch back to topology view to the show the entire diagram</p>
 </div>
-<h2 id="exploring-the-contents-of-a-catalog-or-bucket">Exploring the Contents of a Catalog or Bucket</h2>
+<h2 id="exploring-the-contents-of-a-catalog">Exploring the Contents of a Catalog</h2>
 <div class="admonition abstract">
 <p class="admonition-title">Hover your mouse over the hive_data catalog</p>
 </div>
@@ -819,10 +848,46 @@
 <p class="admonition-title">Close the dialog by pressing the [x] in the corner</p>
 </div>
 <p>You should now see the topology view of the system.</p>
+<h2 id="exploring-the-contents-of-a-bucker">Exploring the Contents of a Bucker</h2>
+<div class="admonition abstract">
+<p class="admonition-title">Hover your mouse over the hive_data bucket</p>
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-hive-hover.png" /></p>
+<p>Instead of selecting the catalog, click on the <code>hive-bucket</code> at the bottom of the screen.</p>
+<p><img alt="Browser" src="../wxd-images/watsonx-hive-bucket.png" /></p>
+<p>Watsonx.data is a unified analytics repository, and it starts like most data management solutions with storage. The most pervasive storage solution in the marketplace is object store. There are several solutions in the marketplace providing low cost, unlimited scalability, extreme durability, and high throughput.</p>
+<p>The Developer edition of watsonx.data uses MinIO as an S3-complaint object store. The bucket <code>hive-bucket</code> resides in MinIO storage and is cataloged in watsonx.data. There are two additional buckets, <code>iceberg-bucket</code> used to store Iceberg tables, and another <code>wxd-system</code>, used for control information.</p>
+<p>There are three tabs in the bucket details pane:</p>
+<ul>
+<li>Details</li>
+<li>Objects</li>
+<li>Access Control</li>
+</ul>
+<p><img alt="Browser" src="../wxd-images/watsonx-hive-bucket-details.png" /></p>
+<div class="admonition abstract">
+<p class="admonition-title">Click on the Objects tab</p>
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-hive-bucket-files.png" /></p>
+<p>The objects tab provides a view into the physical files that are found in the bucket. There is a hierarchy of directories that make up the contents of the bucket. At the highest level we have the bucket itself, or <code>hive-bucket</code> in this example.</p>
+<p>The bucket contains a number of directories: gosales, ontime, taxi, hive_sql. The display will indicate the number of directories or files that are found in the directory. </p>
+<p>This first level of directories map to the schema name. In the watsonx.data system, the schema <code>ontime</code> has the tables cataloged underneath the <code>ontime</code> directory.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Click on the ontime directory</p>
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-hive-ontime.png" /></p>
+<p>The directories in this panel map to the table names. For instance, the directory <code>aircraft</code> is used to store the aircraft table. </p>
+<div class="admonition abstract">
+<p class="admonition-title">Click on the aircraft directory</p>
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-hive-aircraft.png" /></p>
+<p>The physical file that is used to represent the aircraft types is found in this file. An iceberg table will include additional information containing versioning, statistics and partitioning of the table.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Close the bucket dialog by pressing the [x] in the corner</p>
+</div>
 <h2 id="adding-resources-to-watsonxdata">Adding Resources to watsonx.data</h2>
 <p>To view how engines, buckets, and databases can be added, click on the Add component on the top right of the Infrastructure screen and select Create Engine.</p>
 <div class="admonition abstract">
-<p class="admonition-title">Select Add component -&gt; Database</p>
+<p class="admonition-title">Select Add component <span style="color:blue">&rarr;</span> Database</p>
 </div>
 <p>A dialog will appear that provides options for adding another bucket or database to the system. A production version of watsonx.data would also include an option for adding another compute engine to the system.</p>
 <p><img alt="Browser" src="../wxd-images/watsonx-add-database.png" /></p>
