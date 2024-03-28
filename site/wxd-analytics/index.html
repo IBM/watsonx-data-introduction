@@ -222,7 +222,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wxd-reference-ibmid/" class="md-nav__link">
+      <a href="../wxd-ibmid/" class="md-nav__link">
         Requesting an IBMid
       </a>
     </li>
@@ -236,7 +236,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wxd-reference-workshop/" class="md-nav__link">
+      <a href="../wxd-workshop/" class="md-nav__link">
         Accessing a workshop
       </a>
     </li>
@@ -634,7 +634,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../wxd-reference-documentation/" class="md-nav__link">
+      <a href="../wxd-documentation/" class="md-nav__link">
         Documentation
       </a>
     </li>
@@ -651,6 +651,21 @@
     <li class="md-nav__item">
       <a href="../wxd-glossary/" class="md-nav__link">
         Glossary
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../wxd-disclaimer/" class="md-nav__link">
+        Disclaimer
       </a>
     </li>
   
@@ -833,7 +848,25 @@ from
 as select * from tpch.tiny.customer;
 </code></pre></div>
 </div>
-<p>Now that have created a partitioned table, we will execute a SQL statement that will make use of this fact.</p>
+<p>The new table <code>part_customer</code> will be created in the <code>iceberg_bucket</code> with multiple files corresponding to the partitioning. We are going to use the Infrastructure manager to view the file structure.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Click on the Infrastructure icon on the left side of the screen<br><img alt="icon" src="../wxd-images/watsonx-infrastructure-icon.png" /></p>
+</div>
+<p>Find the <code>iceberg-bucket</code> in the Infrastructure diagram.</p>
+<p><img alt="Browser" src="../wxd-images/watsonx-iceberg-bucket.png" /> </p>
+<div class="admonition abstract">
+<p class="admonition-title">Click on the iceberg-bucket</p>
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-iceberg-bucket-details.png" /> </p>
+<div class="admonition abstract">
+<p class="admonition-title">Click on Objects <span style="color:blue">&rarr;</span> part_customer <span style="color:blue">&rarr;</span> data</p>
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-iceberg-customer.png" /> </p>
+<p>The <code>partitioning = array['mktsegment']</code> clause in the create table statement resulted in 5 different files being created, each with data specific to that segment. By partitioning the table this way, the Presto engine is able to optimize queries by only scanning partitions that match your SQL predicates.</p>
+<div class="admonition abstract">
+<p class="admonition-title">Close the current window [x] and then  return to the Query Workspace by clicking this icon on the left side<br><img alt="icon" src="../wxd-images/watsonx-workspace-icon.png" /></p>
+</div>
+<p>Now that have created a partitioned table, we will execute an SQL statement that will make use of this fact.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Run a query against the partitioned table</p>
 <div class="highlight"><pre><span></span><code>select

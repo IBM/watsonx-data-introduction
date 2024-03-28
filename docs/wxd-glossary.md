@@ -18,7 +18,7 @@ Application Programming Interface (API)**: Application Programming Interface (AP
 
 **Command Line Interface (CLI)**: A command-line interface (CLI) is a text-based user interface (UI) used to run programs, manage computer files and interact with the computer.
 
-**dBeaver**: DBeaver is a SQL client software application and a database administration tool. For relational databases it uses the JDBC application programming interface to interact with databases via a JDBC driver. For other databases it uses proprietary database drivers.
+**dBeaver**: DBeaver is an SQL client software application and a database administration tool. For relational databases it uses the JDBC application programming interface to interact with databases via a JDBC driver. For other databases it uses proprietary database drivers.
 
 **Federation**: A federated database is a system in which several databases appear to function as a single entity. Each component database in the system is completely self-sustained and functional. When an application queries the federated database, the system figures out which of its component databases contains the data being requested and passes the request to it. Federated databases can be thought of as database virtualization in much the same way that storage virtualization makes several drives appear as one.
 

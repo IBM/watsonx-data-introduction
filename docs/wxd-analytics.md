@@ -124,7 +124,27 @@ Tables can be partitioned in watsonx.data. This SQL will create a partitioned ta
     as select * from tpch.tiny.customer;
     ```
 
-Now that have created a partitioned table, we will execute a SQL statement that will make use of this fact.
+The new table `part_customer` will be created in the `iceberg_bucket` with multiple files corresponding to the partitioning. We are going to use the Infrastructure manager to view the file structure.
+
+!!! abstract "Click on the Infrastructure icon on the left side of the screen<br>![icon](wxd-images/watsonx-infrastructure-icon.png)"
+
+Find the `iceberg-bucket` in the Infrastructure diagram.
+
+![Browser](wxd-images/watsonx-iceberg-bucket.png) 
+
+!!! abstract "Click on the iceberg-bucket"
+
+![Browser](wxd-images/watsonx-iceberg-bucket-details.png) 
+
+!!! abstract "Click on Objects <span style="color:blue">&rarr;</span> part_customer <span style="color:blue">&rarr;</span> data"
+
+![Browser](wxd-images/watsonx-iceberg-customer.png) 
+
+The `partitioning = array['mktsegment']` clause in the create table statement resulted in 5 different files being created, each with data specific to that segment. By partitioning the table this way, the Presto engine is able to optimize queries by only scanning partitions that match your SQL predicates.
+
+!!! abstract "Close the current window [x] and then  return to the Query Workspace by clicking this icon on the left side<br>![icon](wxd-images/watsonx-workspace-icon.png)"
+
+Now that have created a partitioned table, we will execute an SQL statement that will make use of this fact.
 
 !!! abstract "Run a query against the partitioned table"
     ```

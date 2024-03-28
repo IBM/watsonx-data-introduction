@@ -4,8 +4,8 @@ site_name: Introducing watsonx.data
 nav:
   - Introduction: "index.md"
   - Getting Started:
-    - Requesting an IBMid: "wxd-reference-ibmid.md"
-    - Accessing a workshop: "wxd-reference-workshop.md"
+    - Requesting an IBMid: "wxd-ibmid.md"
+    - Accessing a workshop: "wxd-workshop.md"
     - Lab Instructions: "wxd-lab-instructions.md"
   - watsonx.data UI: 
     - Watsonx UI Overview: "wxd-watsonui.md"
@@ -24,8 +24,9 @@ nav:
   - Optional Features:
     - Jupyter Notebook: "wxd-jupyter.md"
     - Presto UI: "wxd-presto.md"
-  - Documentation: "wxd-reference-documentation.md"
+  - Documentation: "wxd-documentation.md"
   - Glossary: "wxd-glossary.md"
+  - Disclaimer: "wxd-disclaimer.md"
 
   # Copyright
 copyright: Copyright &copy; 2024 IBM 

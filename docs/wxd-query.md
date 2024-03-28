@@ -98,7 +98,7 @@ These icons represent:
 * Clear the Worksheet 
 * Save the SQL
 
-Finally, there are two special characters that you should be aware of when dealing with SQL. The first is the statement terminator, the semicolon `;`. The semicolon terminates an SQL statement. You can place multiple SQL statements into a SQL window and execute them as a block (Run) or by selecting the SQL text that you want to run and then pressing Run. 
+Finally, there are two special characters that you should be aware of when dealing with SQL. The first is the statement terminator, the semicolon `;`. The semicolon terminates an SQL statement. You can place multiple SQL statements into an SQL window and execute them as a block (Run) or by selecting the SQL text that you want to run and then pressing Run. 
 
 The second special character is the double dash `--` which is used to comment out everything after that position in the text.
 

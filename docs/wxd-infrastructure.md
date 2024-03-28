@@ -76,7 +76,7 @@ Reset back to the topology view.
  
 !!! abstract "Switch back to topology view to the show the entire diagram"
 
-## Exploring the Contents of a Catalog or Bucket
+## Exploring the Contents of a Catalog
 
 !!! abstract "Hover your mouse over the hive_data catalog"
 
@@ -108,11 +108,57 @@ To close this dialog, press the [x] in the top right corner of the list.
 
 You should now see the topology view of the system.
 
+## Exploring the Contents of a Bucker
+
+!!! abstract "Hover your mouse over the hive_data bucket"
+
+![Browser](wxd-images/watsonx-hive-hover.png)
+
+Instead of selecting the catalog, click on the `hive-bucket` at the bottom of the screen.
+
+![Browser](wxd-images/watsonx-hive-bucket.png)
+
+Watsonx.data is a unified analytics repository, and it starts like most data management solutions with storage. The most pervasive storage solution in the marketplace is object store. There are several solutions in the marketplace providing low cost, unlimited scalability, extreme durability, and high throughput.
+
+The Developer edition of watsonx.data uses MinIO as an S3-complaint object store. The bucket `hive-bucket` resides in MinIO storage and is cataloged in watsonx.data. There are two additional buckets, `iceberg-bucket` used to store Iceberg tables, and another `wxd-system`, used for control information.
+
+There are three tabs in the bucket details pane:
+
+* Details
+* Objects
+* Access Control
+
+![Browser](wxd-images/watsonx-hive-bucket-details.png)
+
+!!! abstract "Click on the Objects tab"
+
+![Browser](wxd-images/watsonx-hive-bucket-files.png)
+
+The objects tab provides a view into the physical files that are found in the bucket. There is a hierarchy of directories that make up the contents of the bucket. At the highest level we have the bucket itself, or `hive-bucket` in this example.
+
+The bucket contains a number of directories: gosales, ontime, taxi, hive_sql. The display will indicate the number of directories or files that are found in the directory. 
+
+This first level of directories map to the schema name. In the watsonx.data system, the schema `ontime` has the tables cataloged underneath the `ontime` directory.
+
+!!! abstract "Click on the ontime directory"
+
+![Browser](wxd-images/watsonx-hive-ontime.png)
+
+The directories in this panel map to the table names. For instance, the directory `aircraft` is used to store the aircraft table. 
+
+!!! abstract "Click on the aircraft directory"
+
+![Browser](wxd-images/watsonx-hive-aircraft.png)
+
+The physical file that is used to represent the aircraft types is found in this file. An iceberg table will include additional information containing versioning, statistics and partitioning of the table.
+
+!!! abstract "Close the bucket dialog by pressing the [x] in the corner"
+
 ## Adding Resources to watsonx.data
 
 To view how engines, buckets, and databases can be added, click on the Add component on the top right of the Infrastructure screen and select Create Engine.
 
-!!! Abstract "Select Add component -> Database"
+!!! Abstract "Select Add component <span style="color:blue">&rarr;</span> Database"
 
 A dialog will appear that provides options for adding another bucket or database to the system. A production version of watsonx.data would also include an option for adding another compute engine to the system.
 

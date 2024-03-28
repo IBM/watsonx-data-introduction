@@ -66,7 +66,7 @@ The Run on presto-01 button is highlighted at the far right of the SQL window.
 
 The button will reflect which engine watsonx.data will run your query on. There is a pulldown menu beside the button that provides an option to run the query to the point where your cursor is on the text, or from where your cursor is on the text.
 
-You can use these options to run portions of a SQL statement when you are debugging results. In this instance, you just want to run the query and display the results. 
+You can use these options to run portions of an SQL statement when you are debugging results. In this instance, you just want to run the query and display the results. 
 
 !!! abstract "Press the Run on presto-01 button and wait for the results to return"
 

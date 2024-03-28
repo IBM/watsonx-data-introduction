@@ -19,6 +19,7 @@ Lab instructions may contain two types of information:
 
 * Screen (UI) interactions 
 * Text commands
+* Dialog Close
 
 When an action is required, the text will include a box with the instructions.
 
@@ -42,6 +43,12 @@ A copy icon is usually found on the far right-hand side of the command box. Use 
 !!! warning "Copy and Paste"
 
 Some commands may span multiple lines, so make sure you copy everything in the box if you are not using the copy button
+
+There are instructions that will tell you to close the current dialog.
+
+!!! abstract "Close the dialog by pressing the [x] in the corner"
+
+In many cases you will also be able to use the Escape key to close the current window.
 
 ## Icon Reference
 
