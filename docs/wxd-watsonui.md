@@ -1,7 +1,7 @@
 # Watsonx.data Console UI Overview
 Your TechZone reservation will include the server name and port number to use when connecting to the watsonx.data UI. 
 
-<code style="color:blue; font-size: 90%;">Watsonx UI - https://NA4.services.cloud.techzone.ibm.com:xxxxx</code>
+<code style="color:blue; font-size: 90%;">Watsonx UI - https://na4.services.cloud.techzone.ibm.com:xxxxx</code>
 
 !!! abstract "Click on the watsonx.data UI supplied link or copy the URL and port number into your browser"
 
