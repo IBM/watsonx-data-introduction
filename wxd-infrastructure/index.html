@@ -362,8 +362,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exploring-the-contents-of-a-bucker" class="md-nav__link">
-    Exploring the Contents of a Bucker
+  <a href="#exploring-the-contents-of-a-bucket" class="md-nav__link">
+    Exploring the Contents of a Bucket
   </a>
   
 </li>
@@ -719,8 +719,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#exploring-the-contents-of-a-bucker" class="md-nav__link">
-    Exploring the Contents of a Bucker
+  <a href="#exploring-the-contents-of-a-bucket" class="md-nav__link">
+    Exploring the Contents of a Bucket
   </a>
   
 </li>
@@ -843,12 +843,12 @@
 <p class="admonition-title">Click on the Access Control Tab</p>
 </div>
 <p><img alt="Browser" src="../wxd-images/watsonx-access-control.png" /></p>
-<p>To close this dialog, press the [x] in the top right corner of the list. </p>
+<p>The access control tab provides a list of users and groups that are authorized to access this bucket. The system currently has two registered users in it.</p>
 <div class="admonition abstract">
-<p class="admonition-title">Close the dialog by pressing the [x] in the corner</p>
+<p class="admonition-title">Close the dialog by pressing the [x] in the corner, or using the Escape key</p>
 </div>
 <p>You should now see the topology view of the system.</p>
-<h2 id="exploring-the-contents-of-a-bucker">Exploring the Contents of a Bucker</h2>
+<h2 id="exploring-the-contents-of-a-bucket">Exploring the Contents of a Bucket</h2>
 <div class="admonition abstract">
 <p class="admonition-title">Hover your mouse over the hive_data bucket</p>
 </div>
@@ -856,7 +856,7 @@
 <p>Instead of selecting the catalog, click on the <code>hive-bucket</code> at the bottom of the screen.</p>
 <p><img alt="Browser" src="../wxd-images/watsonx-hive-bucket.png" /></p>
 <p>Watsonx.data is a unified analytics repository, and it starts like most data management solutions with storage. The most pervasive storage solution in the marketplace is object store. There are several solutions in the marketplace providing low cost, unlimited scalability, extreme durability, and high throughput.</p>
-<p>The Developer edition of watsonx.data uses MinIO as an S3-complaint object store. The bucket <code>hive-bucket</code> resides in MinIO storage and is cataloged in watsonx.data. There are two additional buckets, <code>iceberg-bucket</code> used to store Iceberg tables, and another <code>wxd-system</code>, used for control information.</p>
+<p>The Developer edition of watsonx.data uses MinIO as an S3-complaint object store. The bucket <code>hive-bucket</code> resides in MinIO storage and is cataloged in watsonx.data. There are three additional buckets, <code>iceberg-bucket</code> used to store Iceberg tables, <code>wxd-system</code> used for control information, and <code>wxd-milvus</code> for Milvus vector database storage.</p>
 <p>There are three tabs in the bucket details pane:</p>
 <ul>
 <li>Details</li>
@@ -869,7 +869,7 @@
 </div>
 <p><img alt="Browser" src="../wxd-images/watsonx-hive-bucket-files.png" /></p>
 <p>The objects tab provides a view into the physical files that are found in the bucket. There is a hierarchy of directories that make up the contents of the bucket. At the highest level we have the bucket itself, or <code>hive-bucket</code> in this example.</p>
-<p>The bucket contains a number of directories: gosales, ontime, taxi, hive_sql. The display will indicate the number of directories or files that are found in the directory. </p>
+<p>The bucket contains a number of directories: gosales, ontime, taxi, and hive_sql. The display will indicate the number of directories or files that are found in the directory. </p>
 <p>This first level of directories map to the schema name. In the watsonx.data system, the schema <code>ontime</code> has the tables cataloged underneath the <code>ontime</code> directory.</p>
 <div class="admonition abstract">
 <p class="admonition-title">Click on the ontime directory</p>
