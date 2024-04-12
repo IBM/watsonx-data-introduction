@@ -8,6 +8,8 @@ The Query History page displays the list of queries that were run while the Pres
 
 The Query History dialog provides a list of all SQL statements sorted by creation time.
 
+!!! abstract "You may need to refresh the browser screen to see an updated list of queries"
+
 ![Browser](wxd-images/watsonx-query-history.png) 
 
 The table contains the following columns:
@@ -63,7 +65,7 @@ The execution plan may be useful to debug performance issues with a query.
 
 !!! warning "Your screens will be different that the ones found in the lab"
 
-!!! abstract "Find the first SQL statement in your list of queries and select the View Excecution Plan option"
+!!! abstract "Find the first SQL statement in your list of queries and select the View Execution Plan option"
 
 ![Browser](wxd-images/watsonx-history-1stSQL.png)
 
@@ -94,11 +96,6 @@ This panel provides information how the query is distributed among engines.
 This panel provides details on the explain analysis (costs) of the various steps in executing the query.
 
 ![Browser](wxd-images/watsonx-history-explain.png)
-
-* Query statement - The original SQL that was submitted to the engine
-* Logical Execution - 
-* Distributed Execution
-* Explain Analyze
 
 ## Summary
 

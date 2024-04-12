@@ -13,7 +13,11 @@ With the standalone software, users can be added within the console’s Access c
 
 ![Browser](wxd-images/watsonx-select-accesscontrol.png) 
 
-The Access Control panel is divided into Infrastructure and Policies. The initial screen displays the objects that are considered part of the Infrastructure. A user must be granted access to the infrastructure (i.e. Presto engine) in order for them to run queries against any of the schemas in the database.
+The Access Control panel is divided into Infrastructure and Policies. 
+
+![Browser](wxd-images/watsonx-select-accesscontrol-main.png) 
+
+The initial screen displays the objects that are considered part of the Infrastructure. A user must be granted access to the infrastructure (i.e. Presto engine) in order for them to run queries against any of the schemas in the database.
 
 !!! abstract "Click on the Policies Tab"
 
@@ -27,69 +31,7 @@ In this section you will add a new user and provide them with privileges over th
 
 This lab is using the Developer edition of the watsonx.data software, which means that the Access control panel does not provide a UI for adding users. In order to manage users, the `user-mgmt` command will need to be used. The `user-mgmt` command is normally run from a command line in the server.
 
-<pre style="font-size: medium; color: darkgreen; overflow: auto">
-./user-mgmt add-user <username> [User | Admin] <password>
-</pre>
-
-The values are:
-
-* `username` - The name of the user
-* `[User|Admin]` - The type of user. Note that the type of user is case-sensitive!
-* `password` - The password for the user.
-
-
-For the purposes of this lab, we are going to use a Jupyter notebook that was specifically created for managing users.
-
-!!! abstract "Find the URL in your reservation that reads Jupyter Notebook - Server: http://useast.services.cloud.techzone.ibm.com:xxxx/notebooks/Table_of_Contents.ipynb and click on it"
-
-The initial screen will request that you enter a password.
-
-The password is <code style="color:blue;font-size:medium;">watsonx.data</code>.
-
-!!! abstract "Enter watsonx.data as the password"
-
-![Browser](wxd-images/watsonx-jupyter-logon.png) 
-
-Once you have authenticated, the main table of contents will be displayed.
-
-![Browser](wxd-images/watsonx-jupyter-toc.png) 
-
-You are going to use the User Administration notebook.
-
-!!! abstract "Click on the blue arrow in the User Administration tile"
-
-![Browser](wxd-images/watsonx-jupyter-tile.png) 
-
-The browser will display the User Administration notebook. 
-
-![Browser](wxd-images/watsonx-jupyter-adminhome.png) 
-
-A Jupyter notebook contains multiple "cells" which can contain a couple of different objects:
-
-- **Code** - A cell that contains code that will run (usually Python)
-- **Markdown** - A cell that contains text and formatting using a language called Markdown
-
-In this lab, we need to run code that is found in the notebook. You can tell which text is a code cell because of the **`[ ]:`** beside the cell and probably because it has some code in the cell! 
-
-![Browser](wxd-images/watsonx-jupyter-highlighted.png)
-
-Before executing the contents of the cell, you must click on the cell (place focus on the cell). You can tell when the focus is on the code cell because it will be highlighted with a thin blue box. 
-
-To "execute" the contents of the cell, you must either hit the run button icon <span style="font-style:bold; color:blue;">&#9658;</span> or Shift-Return on your keyboard. 
-
-![Browser](wxd-images/watsonx-jupyter-runbutton.png) 
-
-!!! abstract "Run the contents of the cell which contains the add-user command"
-
-A message indicating that a user was successfully added will be displayed in the notebook.
-
-<pre style="font-size: medium; color: darkgreen; overflow: auto">
-['Adding password for user watsonx']
-</pre>
-
-At this point you will return to the browser page which contains the watsonx.data UI.
-
-!!! abstract "Click on the browser tab which contains the watsonx.data UI"
+This server includes a user called `watsonx` with a password of `watsonx.data`. If you want to add additional users, see the [User Administration](#user-administration) section at the end of this lab.
 
 ### Access Control
 
@@ -116,7 +58,7 @@ Additionally, a policy has to be created to permit the user to access the table 
 
 ### Granting Access
 
-!!! abstract "Select the presto-01 engine (highlighted in red) to view the current users that have access to the engine"
+!!! abstract "Select the presto-01 engine (highlighted in red above) to view the current users that have access to the engine"
 
 ![Browser](wxd-images/watsonx-access-currentengine.png)
 
@@ -221,6 +163,8 @@ Rules can be used to **Allow** actions or to **Deny** actions.
 
 **Note**: In production versions of watsonx.data, you can provide access to a group which makes it simpler to create a set of rules that apply to a group and then add a user to a group. That way a user will inherit the rules that were applied to the group rather than having to create rules for that individual. The developer edition displays GROUP as an option, but it is not implemented.
 
+!!! abstract "Make sure to select watsonx as the user"
+
 ![Browser](wxd-images/watsonx-access-policy-7.png)
 
 !!! abstract "Press the Add button"
@@ -233,7 +177,7 @@ You can continue to add additional rules to the list. Since we only want the one
 
 ![Browser](wxd-images/watsonx-access-policy-9.png)
 
-!!! abstract "Confirm that the data objects and rules look correct then press the Save button"
+!!! abstract "Confirm that the data objects and rules look correct then press the Create button"
 
 ![Browser](wxd-images/watsonx-access-policy-10.png)
 
@@ -272,7 +216,7 @@ The log in dialog should be displayed.
     * Username: watsonx
     * Password: watsonx.data
     
-Your watsonx.data UI should now display `watsonx`.
+Your watsonx.data UI should now display `watsonx`. Note how you have less components in the Infrastructure summary.
 
 ![Browser](wxd-images/watsonx-user-watsonx.png)
 
@@ -337,3 +281,61 @@ Your watsonx.data UI should now display `ibmlhadmin`.
 
 ## Summary
 In this section you learned how to add a user to watsonx.data (via a command) and control what objects they are allowed to access. In production versions of watsonx.data, the adding and removal of users is directly handled through the User Interface.
+
+## User Administration
+
+Users can be added to the watsonx.data Developer Edition by using a command line tool called `user-mgmt`. The syntax of the command is:
+
+<pre style="font-size: medium; color: darkgreen; overflow: auto">
+./user-mgmt add-user <username> [User | Admin] <password>
+</pre>
+
+The values are:
+
+* `username` - The name of the user
+* `[User|Admin]` - The type of user. Note that the type of user is case-sensitive!
+* `password` - The password for the user.
+
+
+For the purposes of this lab, we are going to use a Jupyter notebook that was specifically created for managing users.
+
+!!! abstract "Find the URL in your reservation that reads Jupyter Notebook - Server: http://na4.services.cloud.techzone.ibm.com:xxxx/notebooks/Administration.ipynb and click on it"
+
+The initial screen will request that you enter a password.
+
+The password is <code style="color:blue;font-size:medium;">watsonx.data</code>.
+
+!!! abstract "Enter watsonx.data as the password"
+
+![Browser](wxd-images/watsonx-jupyter-logon.png) 
+
+Once you have authenticated, the Administration notebook is displayed.
+
+![Browser](wxd-images/watsonx-jupyter-admin.png) 
+
+A Jupyter notebook contains multiple "cells" which can contain a couple of different objects:
+
+- **Code** - A cell that contains code that will run (usually Python)
+- **Markdown** - A cell that contains text and formatting using a language called Markdown
+
+In this lab, we need to run code that is found in the notebook. You can tell which text is a code cell because of the **`[ ]:`** beside the cell and probably because it has some code in the cell! 
+
+![Browser](wxd-images/watsonx-jupyter-highlighted.png)
+
+Before executing the contents of the cell, you must click on the cell (place focus on the cell). You can tell when the focus is on the code cell because it will be highlighted with a thin blue box. 
+
+To "execute" the contents of the cell, you must either hit the run button icon <span style="font-style:bold; color:blue;">&#9658;</span> or Shift-Return on your keyboard. 
+
+![Browser](wxd-images/watsonx-jupyter-runbutton.png) 
+
+!!! abstract "Modify any values and run the contents of the cell which contains the add-user command"
+
+A message indicating that a user was successfully added will be displayed in the notebook.
+
+<pre style="font-size: medium; color: darkgreen; overflow: auto">
+['Adding password for user watsonx']
+</pre>
+
+At this point you will return to the browser page which contains the watsonx.data UI.
+
+!!! abstract "Click on the browser tab which contains the watsonx.data UI"

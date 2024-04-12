@@ -1,23 +1,9 @@
 # Watsonx.data Console UI Overview
 Your TechZone reservation will include the server name and port number to use when connecting to the watsonx.data UI. 
 
-<code style="color:blue; font-size: 90%;">Watsonx UI - https://useast.services.cloud.techzone.ibm.com:xxxxx</code>
+<code style="color:blue; font-size: 90%;">Watsonx UI - https://NA4.services.cloud.techzone.ibm.com:xxxxx</code>
 
 !!! abstract "Click on the watsonx.data UI supplied link or copy the URL and port number into your browser"
-
-You will get a Certificate error in Firefox:
-
-![Browser](wxd-images/browser-warning-1.png)
- 
-!!! abstract "Select Advanced"
-
-![Browser](wxd-images/browser-warning-2.png)
- 
-!!! abstract "Choose 'Accept the Risk and Continue'" 
-
-If you are using Google Chrome, you can bypass the error message by typing in "thisisunsafe" or clicking on the "Proceed to `server name` (unsafe)" link. The `server name` value will be replaced with the name of the TechZone server you are connecting to. 
-
-![Browser](wxd-images/chrome-browser.png)
 
 The watsonx.data UI will display with a login prompt.
 
@@ -65,7 +51,7 @@ Displays a summary of the watsonx.data system and provides a summary of recent a
 #### Infrastructure manager
 The Infrastructure manager displays the current engines, buckets and databases associated with the installation.
 
-!!! abstract "Click on the Query Workplace icon<br>![icon](wxd-images/watsonx-infrastructure-icon.png)"
+!!! abstract "Click on the Infrastructure Manager icon<br>![icon](wxd-images/watsonx-infrastructure-icon.png)"
 
 ![Browser](wxd-images/watsonx-infrastructure.png) 
 
@@ -113,5 +99,6 @@ The subsequent labs will explore the following menu items:
 * Infrastructure Manager
 * Data Manager
 * Query Workspace
+* Access Control
 
 The next section will examine the Infrastructure Manager and how it provides a graphical view of the watsonx.data system.

@@ -102,13 +102,13 @@ The Data Objects tab provides detailed information on the contents of the catalo
 
 ![Browser](wxd-images/watsonx-access-control.png)
 
-To close this dialog, press the [x] in the top right corner of the list. 
+The access control tab provides a list of users and groups that are authorized to access this bucket. The system currently has two registered users in it.
 
-!!! abstract "Close the dialog by pressing the [x] in the corner"
+!!! abstract "Close the dialog by pressing the [x] in the corner, or using the Escape key"
 
 You should now see the topology view of the system.
 
-## Exploring the Contents of a Bucker
+## Exploring the Contents of a Bucket
 
 !!! abstract "Hover your mouse over the hive_data bucket"
 
@@ -120,7 +120,7 @@ Instead of selecting the catalog, click on the `hive-bucket` at the bottom of th
 
 Watsonx.data is a unified analytics repository, and it starts like most data management solutions with storage. The most pervasive storage solution in the marketplace is object store. There are several solutions in the marketplace providing low cost, unlimited scalability, extreme durability, and high throughput.
 
-The Developer edition of watsonx.data uses MinIO as an S3-complaint object store. The bucket `hive-bucket` resides in MinIO storage and is cataloged in watsonx.data. There are two additional buckets, `iceberg-bucket` used to store Iceberg tables, and another `wxd-system`, used for control information.
+The Developer edition of watsonx.data uses MinIO as an S3-complaint object store. The bucket `hive-bucket` resides in MinIO storage and is cataloged in watsonx.data. There are three additional buckets, `iceberg-bucket` used to store Iceberg tables, `wxd-system` used for control information, and `wxd-milvus` for Milvus vector database storage.
 
 There are three tabs in the bucket details pane:
 
@@ -136,7 +136,7 @@ There are three tabs in the bucket details pane:
 
 The objects tab provides a view into the physical files that are found in the bucket. There is a hierarchy of directories that make up the contents of the bucket. At the highest level we have the bucket itself, or `hive-bucket` in this example.
 
-The bucket contains a number of directories: gosales, ontime, taxi, hive_sql. The display will indicate the number of directories or files that are found in the directory. 
+The bucket contains a number of directories: gosales, ontime, taxi, and hive_sql. The display will indicate the number of directories or files that are found in the directory. 
 
 This first level of directories map to the schema name. In the watsonx.data system, the schema `ontime` has the tables cataloged underneath the `ontime` directory.
 

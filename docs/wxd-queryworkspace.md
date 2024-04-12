@@ -115,9 +115,9 @@ At the bottom of your catalog and table list you will see a list of saved worksh
 
 ![Browser](wxd-images/watsonx-sql-saved-file.png)
 
-!!! abstract "Click on the Quick Look worksheet you created"
+!!! abstract "Open a new SQL tab [+] and then click on the Quick Look worksheet you created"
  
-When you click on the name of a worksheet, the SQL will be placed into a new tab in the SQL window, with the tab containing the name of your saved worksheet.
+When you click on the name of a worksheet, the SQL will be placed into the current tab in the SQL window, with the tab containing the name of your saved worksheet. 
 
 ![Browser](wxd-images/watsonx-sql-retrieved.png)
  
@@ -125,4 +125,4 @@ You can now modify the SQL before running it to retrieve results.
 
 ## Summary
 
-This chapter explored the use of the Query Workspace to run SQL commands, generate queries, and determine how the optimizer ran a query. In addition, the ability to store and retrieve was used.
+This chapter explored the use of the Query Workspace to run SQL commands, generate queries, and determine how the optimizer ran a query. In addition, the ability to store and retrieve SQL was used.

@@ -22,7 +22,7 @@ With the engine selected, you can now navigate through the catalogs associated w
 
 ![Browser](wxd-images/watsonx-hive-schemas.png) 
 
-The system has automatically expanded the first schema in the list (`gosalesdw`) and displayed the tables that are associated with that schema. 
+If the system has not expanded the first schema in the list (`gosalesdw`), click on the `gosalesdw` schema to display the tables that are associated with that schema. 
 
 !!! abstract  "Collapse the gosalesdw schema by pressing the <span style="font-style:bold; color:blue;">&#9660;</span> icon"
 
