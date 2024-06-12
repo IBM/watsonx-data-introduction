@@ -1,4 +1,4 @@
-# Analytic Workload
+# Analytic Workloads
 
 This section will explore some of the analytic workloads that you can run with watsonx.data.
 

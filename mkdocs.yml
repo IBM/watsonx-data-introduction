@@ -25,6 +25,7 @@ nav:
     - Jupyter Notebook: "wxd-jupyter.md"
     - Presto UI: "wxd-presto.md"
   - Documentation: "wxd-documentation.md"
+  - SQL Examples: "wxd-sql.md"
   - Glossary: "wxd-glossary.md"
   - Disclaimer: "wxd-disclaimer.md"
 

@@ -683,6 +683,21 @@
   
   
     <li class="md-nav__item">
+      <a href="../wxd-sql/" class="md-nav__link">
+        SQL Examples
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
       <a href="../wxd-glossary/" class="md-nav__link">
         Glossary
       </a>
@@ -870,21 +885,21 @@ group by
 <p>You could use <a href="https://www.latlong.net">https://www.latlong.net</a> to get the longitude/latitude given any address.</p>
 <div class="admonition abstract">
 <p class="admonition-title">SQL Representation of Co-ordinates</p>
-</div>
-<div class="highlight"><pre><span></span><code>select 
-   ST_Point(-121.748360,37.195840)  as SVL, 
-   ST_Point(-122.378952, 37.621311) as SFO;
+<div class="highlight"><pre><span></span><code> select 
+    ST_Point(-121.748360,37.195840)  as SVL, 
+    ST_Point(-122.378952, 37.621311) as SFO;
 </code></pre></div>
+</div>
 <p><img alt="Browser" src="../wxd-images/watsonx-sql-points.png" /></p>
 <h4 id="lines">Lines</h4>
 <p>You could use <a href="https://www.latlong.net">https://www.latlong.net</a> to get the longitude/latitude for 2 points and then create a straight line from it. Below is just a small stretch of the road leading to IBM SVL campus.</p>
 <div class="admonition abstract">
 <p class="admonition-title">SQL Representation of a Line</p>
-</div>
-<p><div class="highlight"><pre><span></span><code>select 
-   ST_LineFromText(&#39;LINESTRING (-121.74294303079807 37.19665657093434, -121.73659072815602 37.20102399761407)&#39;);
+<div class="highlight"><pre><span></span><code>   select 
+    ST_LineFromText(&#39;LINESTRING (-121.74294303079807 37.19665657093434, -121.73659072815602 37.20102399761407)&#39;);
 </code></pre></div>
-<img alt="Browser" src="../wxd-images/watsonx-sql-lines.png" />
+</div>
+<p><img alt="Browser" src="../wxd-images/watsonx-sql-lines.png" />
  </p>
 <h4 id="polygons">Polygons</h4>
 <p>You could use <a href="https://geojson.io/#map=16.39/37.196336/-121.746303">https://geojson.io/#map=16.39/37.196336/-121.746303</a> to click around and generate the coordinates for a polygon of any shape. The following is a polygon of the IBM Silicon Valley campus.</p>

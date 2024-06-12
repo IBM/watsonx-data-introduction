@@ -70,11 +70,11 @@ There are 3 basic geometries, then some complex geometries. The basic geometries
 You could use [https://www.latlong.net](https://www.latlong.net) to get the longitude/latitude given any address.
 
 !!! abstract "SQL Representation of Co-ordinates"
-   ```
-   select 
-      ST_Point(-121.748360,37.195840)  as SVL, 
-      ST_Point(-122.378952, 37.621311) as SFO;
-   ```
+      ```
+       select 
+          ST_Point(-121.748360,37.195840)  as SVL, 
+          ST_Point(-122.378952, 37.621311) as SFO;
+      ```
 
 ![Browser](wxd-images/watsonx-sql-points.png)
 
@@ -83,10 +83,10 @@ You could use [https://www.latlong.net](https://www.latlong.net) to get the long
 You could use [https://www.latlong.net](https://www.latlong.net) to get the longitude/latitude for 2 points and then create a straight line from it. Below is just a small stretch of the road leading to IBM SVL campus.
 
 !!! abstract "SQL Representation of a Line"
-   ```
-   select 
-      ST_LineFromText('LINESTRING (-121.74294303079807 37.19665657093434, -121.73659072815602 37.20102399761407)');
-   ```
+      ```
+         select 
+          ST_LineFromText('LINESTRING (-121.74294303079807 37.19665657093434, -121.73659072815602 37.20102399761407)');
+      ```
 ![Browser](wxd-images/watsonx-sql-lines.png)
  
 #### Polygons
