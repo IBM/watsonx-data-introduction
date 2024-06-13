@@ -1,13 +1,12 @@
 # SQL Examples
 
-This section contains all of the SQL examples used throughout the lab. You can copy the SQL from this chapter to use in the Query Workspace, rather than having to cut and paste them from documentation or type them in.
+This section contains all the SQL examples used throughout the lab. You can copy the SQL from this chapter to use in the Query Workspace, rather than having to cut and paste them from documentation or type them in.
 
 Each SQL statement will reference the chapter in the PDF documentation.
 
-## Chapter 7 - Access Control
+## 7 Access Control
 
 !!! abstract "7.1 Enter this text into the SQL window and Run the code"
-
     ```
     SELECT
       *
@@ -18,7 +17,6 @@ Each SQL statement will reference the chapter in the PDF documentation.
     ``` 
 
 !!! abstract "7.2 Enter this text into the SQL window and Run the code"
-
     ```
     SELECT
       flightdate, reporting_airline, flight_number_reporting_airline, originairportid, destairportid
@@ -28,10 +26,9 @@ Each SQL statement will reference the chapter in the PDF documentation.
       10;
     ``` 
 
-## Chapter 8 - Query Workspace
+## 8 Query Workspace
 
 !!! abstract "8.1 Retrieve 10 rows from the ontime table"
-
     ```
     SELECT
       *
@@ -42,13 +39,12 @@ Each SQL statement will reference the chapter in the PDF documentation.
     ``` 
 
 !!! abstract "8.2 Copy the following SQL and place it into the SQL window"
-
     ```
     SELECT * FROM "hive_data"."ontime"."ontime" LIMIT 10;
     SELECT * FROM "hive_data"."ontime"."ontime" LIMIT 20;
     ``` 
 
-## Chapter 9 - PrestoDB SQL
+## 9 PrestoDB SQL
 
 !!! abstract "9.1 Display the catalogs"
     ```
@@ -107,7 +103,7 @@ Each SQL statement will reference the chapter in the PDF documentation.
     show stats for tpch.sf1.customer;
     ```
 
-## Chapter 10 - Analytic Workloads
+## 10 Analytic Workloads
 
 !!! abstract "10.1 Create the workshop schema in the iceberg_data catalog"
     ```
@@ -208,7 +204,7 @@ Each SQL statement will reference the chapter in the PDF documentation.
     execute customer_by_segment using 'FURNITURE';
     ```
 
-## 11 - Advanced Functions
+## 11 Advanced Functions
 
 !!! abstract "11.1 Concatenate two strings"
       ```
@@ -292,7 +288,7 @@ Each SQL statement will reference the chapter in the PDF documentation.
       select * from "system".runtime.tasks limit 5;
       ```
 
-## 12 - Time Travel
+## 12 Time Travel
 
 !!! abstract "12.1 Check current snapshots – STARTING STATE"
       ```
